@@ -22,31 +22,48 @@ const index = () => {
                     <div className="gray-bg p-3 d-flex justify-content-between">
                         <div>
                             <div className="mb-3">
-                                <p>Market cap</p>
-                                <h5><b>$10.5M</b></h5>
+                                <p>MsDoge Price</p>
+                                <h5><b>$1.18$</b></h5>
                             </div>
 
                             <div>
-                                <p>MsDoge Price</p>
+                                <p>Crypto Price</p>
                                 <h5><b>$1.18</b></h5>
                             </div>
                         </div>
 
 
                         <div>
-                            <p>MsDoge Staked</p>
-                            <div className="d-flex">
-                                <h5><b>10.5M</b> </h5>
-                                <small style={{ marginLeft: "25px" }}>$ 12.45M USD</small>
+                            <div className="mb-3">
+                                <p>MsDoge Market cap</p>
+                                <div className="d-flex">
+                                    <h5><b>10.5M</b> </h5>
+                                    <small style={{ marginLeft: "25px" }}>$ 12.45M USD</small>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p>Crypto Market cap</p>
+                                <h5><b>10.5M</b></h5>
                             </div>
                         </div>
 
 
                         <div>
-                            <p>Circulating supply</p>
-                            <div className="d-flex">
-                                <h5><b>25.5M</b> </h5>
-                                <small style={{ marginLeft: "25px" }}>40.5% LOCKED</small>
+                            <div className="mb-3">
+                                <p>MsDoge Circulating supply</p>
+                                <div className="d-flex">
+                                    <h5><b>25.5M</b> </h5>
+                                    <small style={{ marginLeft: "25px" }}>40.5% LOCKED</small>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p>Crypto Circulating supply</p>
+                                <div className="d-flex">
+                                    <h5><b>25.5M</b> </h5>
+                                    <small style={{ marginLeft: "25px" }}>40.5% LOCKED</small>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,21 +73,19 @@ const index = () => {
                     <div className="gray-bg p-3 d-flex justify-content-between">
                         <div>
                             <div className="mb-3">
-                                <p>Market cap</p>
-                                <h5><b>$10.5M</b></h5>
+                                <p>MsDoge Staked</p>
+                                <div className="d-flex">
+                                    <h5><b>10.5M</b></h5>
+                                    <small style={{ marginLeft: "25px" }}>$ 12.45M USD</small>
+                                </div>
                             </div>
 
                             <div>
-                                <p>Loria Price</p>
-                                <h5><b>$1.18</b></h5>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p>Circulating supply</p>
-                            <div className="d-flex">
-                                <h5><b>25.5M</b> </h5>
-                                <small style={{ marginLeft: "25px" }}>40.5% CLAIMED</small>
+                                <p>Crypto Staked</p>
+                                <div className="d-flex">
+                                    <h5><b>10.5M</b></h5>
+                                    <small style={{ marginLeft: "25px" }}>$ 12.45M USD</small>
+                                </div>
                             </div>
                         </div>
                     </div>

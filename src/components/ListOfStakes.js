@@ -16,9 +16,17 @@ export default function ListOfStakes() {
                   <h2>MsDoge Staking</h2>
                   <p>List of stakes below</p>
                </div>
-               <div className="">
+               <div className="d-flex">
                   <div className="stake-btn">
                      <a className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Stake</a>
+                  </div>
+
+                  <div className="stake-btn-outline">
+                     <a className="btn" >Bonds</a>
+                  </div>
+
+                  <div className="stake-btn-outline">
+                     <a className="btn" >Migrate</a>
                   </div>
                </div>
             </div>
@@ -301,7 +309,7 @@ export default function ListOfStakes() {
                                        <h4 className="green-box">0.5% APY</h4>
                                        <p>The APY is calculated by multiplying the amount of months staked with 0.5. Maximum of 20% APY. Please note that cancelling the stake early will penalize you. Refer to our documentation: <a href="#" className="click-btn">Click Here</a> </p>
                                     </div>
-                                    <button className="mt-3 approve-btn text-white text-center py-4 w-100">Approve 0.5 URUS</button>
+                                    <button className="mt-3 approve-btn text-white text-center py-4 w-100">Approve 0.5 MSDOGE</button>
                                  </div>
                               </div>
                            </div>
@@ -385,18 +393,23 @@ export default function ListOfStakes() {
                            <div className="input-bal">
                               <div className="row">
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
-                                    <div><small>Pool reward</small></div>
-                                    <div><small>1.14005 URUS</small></div>
+                                    <div><small>Pool Reward 1</small></div>
+                                    <div><small>1.14005 MSDODGE</small></div>
                                  </div>
 
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
-                                    <div><small>Penalty Pool reward</small></div>
-                                    <div><small>Balance: 1.14005 URUS</small></div>
+                                    <div><small>Pool Reward 2</small></div>
+                                    <div><small>234.145 CRYPTO</small></div>
+                                 </div>
+
+                                 <div className="mb-4 col-sm-12 d-flex justify-content-between">
+                                    <div><small>Pool Penalty</small></div>
+                                    <div><small>0.000</small></div>
                                  </div>
                                  <div className="col-sm-12">
                                     <div className="p-2 stake-btn">
                                        <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim</button>
-                                       <div className="claim-btn-failed color5 py-2 px-4 w-100 text-center"><b>Transcation failed</b></div>
+                                       {/* <div className="claim-btn-failed color5 py-2 px-4 w-100 text-center"><b>Transcation failed</b></div> */}
                                     </div>
                                  </div>
                               </div>

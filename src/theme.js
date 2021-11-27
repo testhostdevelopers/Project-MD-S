@@ -55,8 +55,8 @@ body{
     background-repeat: no-repeat;
     background-position: center;
   }
-  .s-box h3, .s-box h5, .s-box i{
-    color: ${props => props.theme.fontColor};
+  .s-box h3, .s-box h5, .s-box i, .stake-btn .btn, .approve-btn{
+    color: ${props => props.theme.fontColor} !important;
   }
   .navbar-expand-lg .navbar-nav .nav-item .sub-menu li a {
     border-color: ${props => props.theme.borderColor};
