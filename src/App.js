@@ -3,6 +3,7 @@ import React from "react";
 import './App.css';
 import Coin from './pages/coin';
 import CoinBill from './pages/coinBill';
+import adminDahboard from './pages/adminDashboard';
 
 import {
   BrowserRouter as Router, Switch,Route,} from "react-router-dom";
@@ -27,8 +28,9 @@ function App() {
       {/* <StyledApp> <button onClick={() => themeToggler()}>button</button> */}
       <Router>
       <Switch>
-      <Route path="/" component={Coin} />
-      <Route path="/coin-bill" component={CoinBill} />
+      <Route path="/" component={Coin} exact />
+      <Route path="/coin-bill" component={CoinBill} exact />
+      <Route path="/admin-dashboard" component={adminDahboard} exact />
       </Switch>
       </Router>
       {/* </StyledApp> */}
