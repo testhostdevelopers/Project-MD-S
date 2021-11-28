@@ -6,7 +6,8 @@ import CoinBill from './pages/coinBill';
 import adminDahboard from './pages/adminDashboard';
 
 import {
-  BrowserRouter as Router, Switch,Route,} from "react-router-dom";
+  BrowserRouter as Router, Switch, Route,
+} from "react-router-dom";
 // import styled, {ThemeProvider} from 'styled-components';
 // import {lightTheme, darkTheme, GlobalStyles} from './theme';
 
@@ -16,10 +17,10 @@ import {
 
 
 function App() {
-//   const [ theme, setTheme] = useState("light");
-// const themeToggler = () => {
-//   theme === 'light' ? setTheme('dark') : setTheme("light");
-// }
+  //   const [ theme, setTheme] = useState("light");
+  // const themeToggler = () => {
+  //   theme === 'light' ? setTheme('dark') : setTheme("light");
+  // }
 
   return (
     // <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
@@ -27,11 +28,10 @@ function App() {
     <div className="App">
       {/* <StyledApp> <button onClick={() => themeToggler()}>button</button> */}
       <Router>
-      <Switch>
-      <Route path="/" component={Coin} exact />
-      <Route path="/coin-bill" component={CoinBill} exact />
-      <Route path="/admin-dashboard" component={adminDahboard} exact />
-      </Switch>
+        <Switch>
+          <Route path="/" component={Coin} exact />
+          <Route path="/coin-bill" component={CoinBill} exact />
+        </Switch>
       </Router>
       {/* </StyledApp> */}
     </div>
