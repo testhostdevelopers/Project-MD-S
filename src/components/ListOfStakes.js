@@ -80,13 +80,13 @@ export default function ListOfStakes() {
                            <h5><b>1.0 </b> MsDoge</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b></h5>
+                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
                            <h5>10 MSDOGE <br /> 10 LORIA</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b className="text-read red">30d 10:28</b></h5>
+                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
                         </td>
                         <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
                         <td className="p-2">
@@ -105,13 +105,13 @@ export default function ListOfStakes() {
                            <h5><b>1.0 </b> MsDoge</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b></h5>
+                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
                            <h5>10 MSDOGE <br /> 10 LORIA</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b className="text-read red">30d 10:28</b></h5>
+                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
                         </td>
                         <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
                         <td className="p-2">
@@ -130,13 +130,13 @@ export default function ListOfStakes() {
                            <h5><b>1.0 </b> MsDoge</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b></h5>
+                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
                            <h5>10 MSDOGE <br /> 10 LORIA</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b className="text-read red">30d 10:28</b></h5>
+                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
                         </td>
                         <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
                         <td className="p-2">
@@ -155,7 +155,7 @@ export default function ListOfStakes() {
                            <h5><b>1.0 </b> MsDoge</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b></h5>
+                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
                            <h5>10 MSDOGE <br /> 10 LORIA</h5>
@@ -180,13 +180,13 @@ export default function ListOfStakes() {
                            <h5><b>1.0 </b> MsDoge</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b></h5>
+                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
                            <h5>10 MSDOGE <br /> 10 LORIA</h5>
                         </td>
                         <td className="p-2">
-                           <h5><b className="text-read red">30d 10:28</b></h5>
+                           <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
                         </td>
                         <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
                         <td className="p-2">
@@ -237,7 +237,7 @@ export default function ListOfStakes() {
                            <option>Remaining time</option>
                            <option>Remaining time</option>
                         </select>
-                        <h5 className="mt-3"><b className="text-read red">30d 10:28</b></h5>
+                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
                      </li>
                      <li>
                         <button type="button" className="table-btn py-2 px-4">Claim</button>

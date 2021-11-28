@@ -3,7 +3,6 @@ import React from "react";
 import './App.css';
 import Coin from './pages/coin';
 import CoinBill from './pages/coinBill';
-import adminDahboard from './pages/adminDashboard';
 
 import {
   BrowserRouter as Router, Switch, Route,
