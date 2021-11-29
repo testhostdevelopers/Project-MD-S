@@ -5,53 +5,53 @@ import metamask from "../assets/images/icons/metamask-icon.svg";
 import coin from "../assets/images/icons/coin-base.jpg";
 import fortmatic from "../assets/images/icons/fortmatic-icon.svg";
 import wallet from "../assets/images/icons/wallet-icon.svg";
+
 import logo from '../assets/images/favicon.png';
 
-
-export default function ListOfStakes() {
+export default function ListOfBounds() {
    const [counter, setCounter] = useState(1);
    const [boundTabs, setBoundTabs] = useState(false);
+
    return (
       <React.Fragment>
          <div className="list-stake ms">
-           
             <div className="row">
                <div className="col-12">
                   <table className="stake-list-sel fliter-box w-100 my-4 d-none d-md-block">
                      <tr>
                         <td className="p-2">
                            <select>
-                              <option>Start date</option>
-                              <option>Start date</option>
-                              <option>Start date</option>
+                              <option>Asset</option>
+                              <option>Asset</option>
+                              <option>Asset</option>
                            </select>
                         </td>
                         <td className="p-2">
                            <select>
-                              <option>Amount of stake</option>
-                              <option>Amount of stake</option>
-                              <option>Amount of stake</option>
+                              <option>Balance</option>
+                              <option>Balance</option>
+                              <option>Balance</option>
                            </select>
                         </td>
                         <td className="p-2">
                            <select>
-                              <option>APY</option>
-                              <option>APY</option>
-                              <option>APY</option>
+                              <option>Price</option>
+                              <option>Price</option>
+                              <option>Price</option>
                            </select>
                         </td>
                         <td className="p-2">
                            <select>
-                              <option>Amount of reward</option>
-                              <option>Amount of reward</option>
-                              <option>Amount of reward</option>
+                              <option>ROI</option>
+                              <option>ROI</option>
+                              <option>ROI</option>
                            </select>
                         </td>
                         <td className="p-2">
                            <select>
-                              <option>Remaining time</option>
-                              <option>Remaining time</option>
-                              <option>Remaining time</option>
+                              <option>Purchased</option>
+                              <option>Purchased</option>
+                              <option>Purchased</option>
                            </select>
                         </td>
                         <td className="p-2"></td>
@@ -59,23 +59,33 @@ export default function ListOfStakes() {
                      </tr>
                      <tr className="m-0">
                         <td className="p-2">
-                           <h5><b>09/10/2021</b></h5>
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
                         </td>
                         <td className="p-2">
-                           <h5><b>1.0 </b> MsDoge</h5>
+                           <h5><b>DAI</b> </h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
+                           <h5><b>$838</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5><b>1.64%</b></h5>
                         </td>
                         <td className="p-2">
-                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
+                           <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
+                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                         <td className="p-2">
-                           <a href="#" className="dots" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                           <a href="#" className="dots">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                               </svg>
@@ -84,23 +94,33 @@ export default function ListOfStakes() {
                      </tr>
                      <tr className="m-0">
                         <td className="p-2">
-                           <h5><b>09/10/2021</b></h5>
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons eth">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
                         </td>
                         <td className="p-2">
-                           <h5><b>1.0 </b> MsDoge</h5>
+                           <h5><b>DAI-ETH</b> </h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
+                           <h5><b>$838</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5><b>1.64%</b></h5>
                         </td>
                         <td className="p-2">
-                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
+                           <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
+                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                         <td className="p-2">
-                           <a href="#" className="dots" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                           <a href="#" className="dots">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                               </svg>
@@ -109,23 +129,168 @@ export default function ListOfStakes() {
                      </tr>
                      <tr className="m-0">
                         <td className="p-2">
-                           <h5><b>09/10/2021</b></h5>
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons eth">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
                         </td>
                         <td className="p-2">
-                           <h5><b>1.0 </b> MsDoge</h5>
+                           <h5><b>DAI-ETH</b> </h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
+                           <h5><b>$838</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5><b>1.64%</b></h5>
                         </td>
                         <td className="p-2">
-                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
+                           <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
+                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                         <td className="p-2">
-                           <a href="#" className="dots" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                           <a href="#" className="dots">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                              </svg>
+                           </a>
+                        </td>
+                     </tr>
+
+                  </table>
+                  <ul className="stake-list-sel fliter-box d-flex flex-wrap my-4 ls p-0 d-block d-md-none">
+                     <li className="col mb-3 mb-md-0 me-3">
+                        <select>
+                           <option>Asset</option>
+                           <option>Asset</option>
+                           <option>Asset</option>
+                        </select>
+                        <h5 className="mt-3"><b>09/10/2021</b></h5>
+                     </li>
+                     <li className="col mb-3 mb-md-0 me-3 text-center">
+                        <select>
+                           <option>Balance</option>
+                           <option>Balance</option>
+                           <option>Balance</option>
+                        </select>
+                        <h5 className="mt-3"><b>1.0 </b> MsDoge</h5>
+                     </li>
+                     <li className="col mb-3 mb-md-0 me-3 text-center">
+                        <select>
+                           <option>Price</option>
+                           <option>Price</option>
+                           <option>Price</option>
+                        </select>
+                        <h5 className="mt-3"><b>0.5%</b></h5>
+                     </li>
+                     <li className="col mb-3 mb-md-0 me-3 text-center">
+                        <select>
+                           <option>ROI</option>
+                           <option>ROI</option>
+                           <option>ROI</option>
+                        </select>
+                        <h5 className="mt-3">MsDoge</h5>
+                     </li>
+                     <li className="col mb-3 mb-md-0 me-3 text-center">
+                        <select>
+                           <option>Purchased</option>
+                           <option>Purchased</option>
+                           <option>Purchased</option>
+                        </select>
+                        <h5 className="mt-3"><b className="text-read">$3,462,530</b></h5>
+                     </li>
+                     <li>
+                        <button type="button" className="table-btn py-2 px-4">Bond</button>
+                     </li>
+                  </ul>
+
+               </div>
+            </div>
+         </div>
+
+         <div className="list-stake ms">
+            <div className="d-flex justify-content-between list-stake-flexbox">
+               <div className="heading-text-stake ms">
+                  <p>List of Bonds Market below</p>
+               </div>
+            </div>
+            <div className="row">
+               <div className="col-12">
+                  <table className="stake-list-sel fliter-box w-100 my-4 d-none d-md-block">
+                     <tr>
+                        <td className="p-2">
+                           <select>
+                              <option>Asset</option>
+                              <option>Asset</option>
+                              <option>Asset</option>
+                           </select>
+                        </td>
+                        <td className="p-2">
+                           <select>
+                              <option>Bond</option>
+                              <option>Bond</option>
+                              <option>Bond</option>
+                           </select>
+                        </td>
+                        <td className="p-2">
+                           <select>
+                              <option>Price</option>
+                              <option>Price</option>
+                              <option>Price</option>
+                           </select>
+                        </td>
+                        <td className="p-2">
+                           <select>
+                              <option>ROI</option>
+                              <option>ROI</option>
+                              <option>ROI</option>
+                           </select>
+                        </td>
+                        <td className="p-2">
+                           <select>
+                              <option>Purchased</option>
+                              <option>Purchased</option>
+                              <option>Purchased</option>
+                           </select>
+                        </td>
+                        <td className="p-2"></td>
+                        <td className="p-2"></td>
+                     </tr>
+                     <tr className="m-0">
+                        <td className="p-2">
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>DAI</b> </h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>$838</b></h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>1.64%</b></h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b className="text-read">$3,462,530</b></h5>
+                        </td>
+                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                        <td className="p-2">
+                           <a href="#" className="dots">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                               </svg>
@@ -134,21 +299,101 @@ export default function ListOfStakes() {
                      </tr>
                      <tr className="m-0">
                         <td className="p-2">
-                           <h5><b>09/10/2021</b></h5>
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons eth">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
                         </td>
                         <td className="p-2">
-                           <h5><b>1.0 </b> MsDoge</h5>
+                           <h5><b>DAI-ETH</b> </h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
+                           <h5><b>$838</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5><b>1.64%</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5><b className="text-read green">Ready to claim</b></h5>
+                           <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#claimCoinPopup" type="button" className="table-btn btn py-2 px-4">Claim</button></td>
+                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                        <td className="p-2">
+                           <a href="#" className="dots">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                              </svg>
+                           </a>
+                        </td>
+                     </tr>
+                     <tr className="m-0">
+                        <td className="p-2">
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons eth">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>DAI-ETH</b> </h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>$838</b></h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>1.64%</b></h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b className="text-read">$3,462,530</b></h5>
+                        </td>
+                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                        <td className="p-2">
+                           <a href="#" className="dots">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                              </svg>
+                           </a>
+                        </td>
+                     </tr>
+                     <tr className="m-0">
+                        <td className="p-2">
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons eth">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>DAI-ETH</b> </h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>$838</b></h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b>1.64%</b></h5>
+                        </td>
+                        <td className="p-2">
+                           <h5><b className="text-read">$3,462,530</b></h5>
+                        </td>
+                        <td className="p-2"> <button style={{ fontSize: "11px" }} data-bs-toggle="modal" data-bs-target="#claimCoinPopup" type="button" className="table-btn btn py-2 px-4">Sold Out</button></td>
                         <td className="p-2">
                            <a className="dots text-read" data-bs-toggle="modal" data-bs-target="#cancelStake">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -159,23 +404,33 @@ export default function ListOfStakes() {
                      </tr>
                      <tr className="m-0">
                         <td className="p-2">
-                           <h5><b>09/10/2021</b></h5>
+                           <div className="bonds_data_set_coin_icons">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
+
+                           <div className="bonds_data_set_coin_icons eth">
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                              </svg>
+                           </div>
                         </td>
                         <td className="p-2">
-                           <h5><b>1.0 </b> MsDoge</h5>
+                           <h5><b>DAI-ETH</b> </h5>
                         </td>
                         <td className="p-2">
-                           <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
+                           <h5><b>$838</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5><b>1.64%</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
+                           <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2"> <button type="button" className="table-btn py-2 px-4">Claim</button></td>
+                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                         <td className="p-2">
-                           <a href="#" className="dots" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                           <a href="#" className="dots">
                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                               </svg>
@@ -186,46 +441,46 @@ export default function ListOfStakes() {
                   <ul className="stake-list-sel fliter-box d-flex flex-wrap my-4 ls p-0 d-block d-md-none">
                      <li className="col mb-3 mb-md-0 me-3">
                         <select>
-                           <option>Start date</option>
-                           <option>Start date</option>
-                           <option>Start date</option>
+                           <option>Asset</option>
+                           <option>Asset</option>
+                           <option>Asset</option>
                         </select>
                         <h5 className="mt-3"><b>09/10/2021</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
                         <select>
-                           <option>Amount of stake</option>
-                           <option>Amount of stake</option>
-                           <option>Amount of stake</option>
+                           <option>Bond</option>
+                           <option>Bond</option>
+                           <option>Bond</option>
                         </select>
                         <h5 className="mt-3"><b>1.0 </b> MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
                         <select>
-                           <option>APY</option>
-                           <option>APY</option>
-                           <option>APY</option>
+                           <option>Price</option>
+                           <option>Price</option>
+                           <option>Price</option>
                         </select>
                         <h5 className="mt-3"><b>0.5%</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
                         <select>
-                           <option>Amount of reward</option>
-                           <option>Amount of reward</option>
-                           <option>Amount of reward</option>
+                           <option>ROI</option>
+                           <option>ROI</option>
+                           <option>ROI</option>
                         </select>
                         <h5 className="mt-3">MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
                         <select>
-                           <option>Remaining time</option>
-                           <option>Remaining time</option>
-                           <option>Remaining time</option>
+                           <option>Purchased</option>
+                           <option>Purchased</option>
+                           <option>Purchased</option>
                         </select>
-                        <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
+                        <h5 className="mt-3"><b className="text-read">$3,462,530</b></h5>
                      </li>
                      <li>
-                        <button type="button" className="table-btn py-2 px-4">Claim</button>
+                        <button type="button" className="table-btn py-2 px-4">Bond</button>
                      </li>
                   </ul>
 
@@ -253,10 +508,10 @@ export default function ListOfStakes() {
                                        <input type="text" className="input-box" placeholder="0.5" />
                                     </div>
                                     <div className="col-6 text-end">
-                                       <h4 className="mb-3">Balance: 1.14005 MSDOGE</h4>
+                                       <h4 className="mb-3">Balance: 1.14005 URUS</h4>
                                        <div className="small-logo-photo d-flex justify-content-end">
                                           <img src={slogo} width="20" />
-                                          <div style={{marginLeft: "10px"}}>MsDoge</div>
+                                          <div style={{ marginLeft: "10px" }}>MsDoge</div>
                                        </div>
                                     </div>
                                  </div>
@@ -294,7 +549,7 @@ export default function ListOfStakes() {
                                        <h4 className="green-box">0.5% APY</h4>
                                        <p>The APY is calculated by multiplying the amount of months staked with 0.5. Maximum of 20% APY. Please note that cancelling the stake early will penalize you. Refer to our documentation: <a href="#" className="click-btn">Click Here</a> </p>
                                     </div>
-                                    <button className="mt-3 approve-btn text-white text-center py-4 w-100">Approve 0.5 MSDOGE</button>
+                                    <a className="mt-3 approve-btn text-white text-center py-4 w-100" data-bs-toggle="modal" data-bs-target="#msDogeApprove">Approve 0.5 MSDOGE</a>
                                  </div>
                               </div>
                            </div>
@@ -393,7 +648,7 @@ export default function ListOfStakes() {
                                  </div>
                                  <div className="col-sm-12">
                                     <div className="p-2 stake-btn">
-                                       <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim</button>
+                                       <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Bond</button>
                                        {/* <div className="claim-btn-failed color5 py-2 px-4 w-100 text-center"><b>Transcation failed</b></div> */}
                                     </div>
                                  </div>
@@ -424,17 +679,17 @@ export default function ListOfStakes() {
                               <div className="row">
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
                                     <div><small>Pool reward</small></div>
-                                    <div><small>1.14005 MSDOGE</small></div>
+                                    <div><small>1.14005 URUS</small></div>
                                  </div>
 
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
                                     <div><small>Pool Stake</small></div>
-                                    <div><small>Balance: 1.14005 MSDOGE</small></div>
+                                    <div><small>Balance: 1.14005 URUS</small></div>
                                  </div>
 
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
                                     <div><small>Penalty Pool reward</small></div>
-                                    <div><small>Balance: 1.14005 MSDOGE</small></div>
+                                    <div><small>Balance: 1.14005 URUS</small></div>
                                  </div>
                                  <div className="col-sm-12">
                                     <div className="p-2 stake-btn">
@@ -449,6 +704,7 @@ export default function ListOfStakes() {
                </div>
             </div>
          </div>
+
 
          {/* Modal */}
 
@@ -644,6 +900,7 @@ export default function ListOfStakes() {
                </div>
             </div>
          </div>
+
 
       </React.Fragment>
    )
