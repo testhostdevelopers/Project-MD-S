@@ -25,9 +25,10 @@ interface IERC20 {
 }
 
 contract Staking {
-    IERC20 public rewardsToken;
-    IERC20 public stakingToken;
-    IERC20 public loriaToken;
+    address public dogeStaking;
+    address public loriaStaking;
+    address public dogeReward;
+    address public loriaReward;
 
     event Staked(address user, uint amount, uint index);
     event Withdrawn(address user, uint amount);
@@ -42,12 +43,14 @@ contract Staking {
     uint private day = 24 * 3600;
     uint public lastUpdateTime;
     uint public rewardPerTokenStored;
-    uint private _totalSupply;
+    uint private _totalDogeSupply;
+    uint private _totalLoriaSupply;
     uint256 private _totalStakedUserCount;
     address[] private _stakedAddressList;
     address private owner;
     
     struct StakingItem {
+        uint _stakedToken;
         uint _initBalance;
         uint _period;
         uint _dogeAPY;
@@ -64,10 +67,11 @@ contract Staking {
 
     mapping(address => StakingItem[]) private _stakingList;
     
-    constructor(address _stakingToken, address _loriaToken ,  address _rewardsToken) {
-        stakingToken = IERC20(_stakingToken);
-        loriaToken = IERC20(_loriaToken);
-        rewardsToken = IERC20(_rewardsToken);
+    constructor(address _dogeStaking, address _loriaStaking, address _dogeReward, address _loriaReward) {
+        dogeStaking = _dogeStaking;
+        loriaStaking = _loriaStaking;
+        dogeReward = _dogeReward;
+        loriaReward = _loriaReward;
         owner = msg.sender;
     }
     
@@ -76,14 +80,23 @@ contract Staking {
         _;
     }
 
-    function stake(uint _amount, uint _period) external {
-        stakingToken.transferFrom(msg.sender, address(this), _amount);
-        _totalSupply += _amount;
+    function stake(uint _type, uint _amount, uint _period) external {
+        require(_type < 2,"No existed token");
+        if (_type == 0) {
+            IERC20(dogeStaking).transferFrom(msg.sender, address(this), _amount);
+            _totalDogeSupply += _amount;
+        }
+        else {
+            IERC20(loriaStaking).transferFrom(msg.sender, address(this), _amount);
+            _totalLoriaSupply += _amount;
+        }
+        
         bool flag = false;
         if (_stakingList[msg.sender].length > 0) {
             uint lastIdx = _stakingList[msg.sender].length - 1;
-            if (_stakingList[msg.sender][lastIdx]._dogeAPY == DogeAPY && _stakingList[msg.sender][lastIdx]._dogeEli == DogeElig && _stakingList[msg.sender][lastIdx]._loriaAPY == LoriaAPY && _stakingList[msg.sender][lastIdx]._loriaEli == LoriaElig ) {
+            if (_stakingList[msg.sender][lastIdx]._dogeAPY == DogeAPY && _stakingList[msg.sender][lastIdx]._dogeEli == DogeElig && _stakingList[msg.sender][lastIdx]._loriaAPY == LoriaAPY && _stakingList[msg.sender][lastIdx]._loriaEli == LoriaElig && _stakingList[msg.sender][lastIdx]._stakedToken == _type) {
                 _stakingList[msg.sender][lastIdx]._initBalance += _amount;
+                _stakingList[msg.sender][lastIdx]._created_at = block.timestamp;
                 _stakingList[msg.sender][lastIdx]._updated_doge = block.timestamp;
                 _stakingList[msg.sender][lastIdx]._updated_loria = block.timestamp;
                 _stakingList[msg.sender][lastIdx]._isRewarded = false;
@@ -94,6 +107,7 @@ contract Staking {
 
         if (flag) {
             StakingItem memory item = StakingItem({
+                _stakedToken: _type,
                 _initBalance: _amount,
                 _created_at: block.timestamp,
                 _updated_doge: block.timestamp,
@@ -111,23 +125,37 @@ contract Staking {
         }
 
         uint index = _stakingList[msg.sender].length - 1;
-        receiveReward(index, _amount);
+        receiveReward(index, _amount, _type);
         emit Staked(msg.sender, _amount, index);
     }
 
     function withdraw() external {
         StakingItem[] memory item = _stakingList[msg.sender];
         uint timestamp = block.timestamp;
-        uint rewardBalance = 0;
-        uint stakingBalance = 0;
+        uint _dogeStaked = 0;
+        uint _loriaStaked = 0;
+        uint _dogeReward = 0;
+        uint _loriaReward = 0;
         for (uint i = 0; i < item.length; i ++) {
-            rewardBalance += _stakingList[msg.sender][i]._initBalance;
-            if (timestamp - _stakingList[msg.sender][i]._created_at >= _stakingList[msg.sender][i]._dogeEli * 1 days) {
-                stakingBalance += _stakingList[msg.sender][i]._initBalance;
+            if (item[i]._stakedToken == 0) {
+                _dogeReward += item[i]._initBalance;
+                if (timestamp - item[i]._created_at >= item[i]._dogeEli * 1 days) {
+                    _dogeStaked += item[i]._initBalance;
+                }
+            }
+            else {
+                _loriaReward += _stakingList[msg.sender][i]._initBalance;
+                if (timestamp - item[i]._created_at >= item[i]._loriaEli * 1 days) {
+                    _loriaStaked += item[i]._initBalance;
+                }
             }
         }
-        rewardsToken.transferFrom(msg.sender,address(this), rewardBalance);
-        if (stakingBalance > 0) stakingToken.transfer(msg.sender, stakingBalance);
+
+        if (_dogeReward > 0) IERC20(dogeReward).transferFrom(msg.sender,address(this), _dogeReward);
+        else if (_loriaReward > 0) IERC20(loriaReward).transferFrom(msg.sender,address(this), _loriaReward);
+
+        if (_dogeStaked > 0) IERC20(dogeStaking).transfer(msg.sender, _dogeStaked);
+        else if (_loriaStaked > 0) IERC20(loriaStaking).transfer(msg.sender, _loriaStaked);
         delete _stakingList[msg.sender];
     }
     
@@ -139,7 +167,7 @@ contract Staking {
         if ( diffDoge >= _stakingList[msg.sender][idx]._dogeEli * 1 days) {
             uint countDoge = (diffDoge / _stakingList[msg.sender][idx]._dogeEli / day);
             uint _dogeRewards = _stakingList[msg.sender][idx]._initBalance * _stakingList[msg.sender][idx]._dogeAPY / 100 * countDoge;
-            stakingToken.transfer(msg.sender, _dogeRewards);
+            IERC20(dogeStaking).transfer(msg.sender, _dogeRewards);
             _stakingList[msg.sender][idx]._updated_doge = timestamp;
             _stakingList[msg.sender][idx]._claimedDoge += _dogeRewards;
         }
@@ -147,7 +175,7 @@ contract Staking {
         if (diffLoria >= _stakingList[msg.sender][idx]._loriaEli * 1 days ) {
             uint countLoria = (diffLoria / _stakingList[msg.sender][idx]._loriaEli / day);
             uint _loriaRewards = _stakingList[msg.sender][idx]._initBalance * _stakingList[msg.sender][idx]._loriaAPY / (100 * 1000) * countLoria;
-            loriaToken.transfer(msg.sender, _loriaRewards);
+            IERC20(loriaStaking).transfer(msg.sender, _loriaRewards);
             _stakingList[msg.sender][idx]._updated_loria = timestamp;
             _stakingList[msg.sender][idx]._claimedLoria += _loriaRewards;
         }
@@ -160,7 +188,8 @@ contract Staking {
     }
 
     function recoverToken(uint amount) external onlyOwner {
-        stakingToken.transfer(owner, amount);
+        IERC20(dogeStaking).transfer(owner, amount);
+        IERC20(loriaStaking).transfer(owner, amount);
         emit RecoverStaking(owner, amount);
     }
 
@@ -204,9 +233,10 @@ contract Staking {
         return LoriaElig;
     }
 
-    function receiveReward(uint _idx, uint _amount) private {
+    function receiveReward(uint _idx, uint _amount, uint _type) private {
         require(!_stakingList[msg.sender][_idx]._isRewarded, "You have received!");
         _stakingList[msg.sender][_idx]._isRewarded = true;
-        rewardsToken.transfer(msg.sender, _amount);
+        if (_type == 0) IERC20(dogeReward).transfer(msg.sender, _amount);
+        else IERC20(loriaReward).transfer(msg.sender, _amount);
     }
 }
