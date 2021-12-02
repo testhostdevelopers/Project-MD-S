@@ -68,7 +68,7 @@ export default function ListOfStakes() {
                            <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5>10 MSDOGE <br /> 10 CRYPTO</h5>
                         </td>
                         <td className="p-2">
                         <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
@@ -93,7 +93,7 @@ export default function ListOfStakes() {
                            <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5>10 MSDOGE <br /> 10 CRYPTO</h5>
                         </td>
                         <td className="p-2">
                         <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
@@ -118,7 +118,7 @@ export default function ListOfStakes() {
                            <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5>10 MSDOGE <br /> 10 CRYPTO</h5>
                         </td>
                         <td className="p-2">
                         <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
@@ -143,7 +143,7 @@ export default function ListOfStakes() {
                            <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5>10 MSDOGE <br /> 10 CRYPTO</h5>
                         </td>
                         <td className="p-2">
                            <h5><b className="text-read green">Ready to claim</b></h5>
@@ -168,7 +168,7 @@ export default function ListOfStakes() {
                            <h5><b>0.5%</b> <br /><b>0.5%</b></h5>
                         </td>
                         <td className="p-2">
-                           <h5>10 MSDOGE <br /> 10 LORIA</h5>
+                           <h5>10 MSDOGE <br /> 10 CRYPTO</h5>
                         </td>
                         <td className="p-2">
                            <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
