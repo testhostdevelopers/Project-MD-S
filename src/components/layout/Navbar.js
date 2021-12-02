@@ -63,9 +63,14 @@ return (
                <div className="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                      <li className="nav-item">
-                        <a className="nav-link active" href="/">Home</a>
+                        <Link className="nav-link active" to="/">Home</Link>
                      </li>
-                     <li className={`nav-item has-submenu ${isActive ? "hide-menu" : "show-menu"}`}>
+                     <li className="nav-item">
+                     <Link className="nav-link active" to="/">Stake</Link>
+                     </li>
+                     {
+                        /*
+                         <li className={`nav-item has-submenu ${isActive ? "hide-menu" : "show-menu"}`}>
                         <a className="nav-link" href="#0" onClick={handleToggle}>Stake</a>
                         <ul className="sub-menu">
                            {SubMenu.map((SubMenu, idx) => (
@@ -77,6 +82,8 @@ return (
                            ))}
                         </ul>
                      </li>
+                        */
+                     }
                   </ul>
                   <div className="float-end d-none d-lg-block">
                      <div className="d-flex align-items-center right-butns">

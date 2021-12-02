@@ -42,7 +42,7 @@ body{
 .Play-Game ul li::before {
   background: ${props => props.theme.backgroundColor};
 }
-.download-badge label, .Play-Game ul li, a, .nav-link, .stake-list-sel select, .popup-card-container, .popup-card-container svg, .popup-card-container svg path, .hero-text-box h1, .hero-text-box p, .main-heading-center h2, .cat-left-text h3, .cat-left-text p, .text-block-heading h3, .text-block-heading p, .icon-text-block-cri h4, .icon-text-block-cri p, .number-text-box h4, .number-text-box p, .aud-white-box p, .aud-white-box h5, .next-ele li h3, .trust-line-textbox h2, .trust-line-textbox p, .review-box h5, .text-block-heading h5, .sm-text h5, .sm-text p, .ft-nav li, .ft-nav li a, .heading-text-stake h2, .fliter-box h5 b, .fliter-box h5, .heading-text-stake p, .text-person h3, .accordion-button.collapsed, .dots svg {
+.download-badge label, .Play-Game ul li, a, .nav-link, .bonds_data_set_coin_icons svg path, .stake-list-sel select, .popup-card-container, .popup-card-container svg, .popup-card-container svg path, .hero-text-box h1, .hero-text-box p, .main-heading-center h2, .cat-left-text h3, .cat-left-text p, .text-block-heading h3, .text-block-heading p, .icon-text-block-cri h4, .icon-text-block-cri p, .number-text-box h4, .number-text-box p, .aud-white-box p, .aud-white-box h5, .next-ele li h3, .trust-line-textbox h2, .trust-line-textbox p, .review-box h5, .text-block-heading h5, .sm-text h5, .sm-text p, .ft-nav li, .ft-nav li a, .heading-text-stake h2, .fliter-box h5 b, .fliter-box h5, .heading-text-stake p, .text-person h3, .accordion-button.collapsed, .dots svg {
     color: ${props => props.theme.text};
     fill: ${props => props.theme.text};
   }

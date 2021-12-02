@@ -15,7 +15,7 @@ return (
                <h3>0 <span>MSDOGE</span></h3>
             </div>
             <div className="col-6 py-2 text-end">
-               <h3><span>Bonds in total</span></h3>
+               <h3><span>Staked in total</span></h3>
             </div>
          </div>
          <div className="row border-top">
@@ -23,7 +23,7 @@ return (
                <h3>0 <span>CRYPTO</span></h3>
             </div>
             <div className="col-6 py-2 text-end">
-               <h3><span>Bonds in total</span></h3>
+               <h3><span>Staked in total</span></h3>
             </div>
          </div>
          <div className="row border-top">
@@ -40,7 +40,7 @@ return (
             </div>
             <div className="col-6 py-2 text-end">
                <h3><span>Unclaimed reward</span></h3>
-            </div> 
+            </div>
          </div>
          <div className="row border-top">
             <div className="col-6 py-3 text-center">
