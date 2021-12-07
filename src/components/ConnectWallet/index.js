@@ -1,30 +1,32 @@
 import React, {useState} from "react";
+import { useWeb3React } from "@web3-react/core"
 import './style.scss';
 
 export default function ConnectWallet () {
-  const [ConnectWallet, setConnectWallet] = React.useState(0);
-  // change useStare to 0 and 1
-  // wallet connect = 1
-  // wallet not connect = 0
-  let CWName = '';
-  if( ConnectWallet === 1 ){
-    CWName = "CWNameTrue";
-  }else{
-    CWName = "CWNameFalse";
-  }
+  const { account, active } = useWeb3React();
+  const [modalAttr, setModalAttr] = useState({
+    "data-bs-toggle": "modal",
+    "data-bs-target": "#connectWallet"
+  })
+
   return (
     <>
-    <a className={`wallet_connected ${CWName}`} data-bs-toggle="modal" data-bs-target="#connectWallet">
-        <div className="Wallet-Connect">
-          <p>0xbAu7...f08a</p>
-        </div>
-        <div className="Wallet-NotConnect">
-          <p>Connect Wallet</p>
-        </div>
-    </a>
-
-   
-</>
+      <a
+        className={`wallet_connected ${ active ? 'CWNameTrue' : 'CWNameFalse' }`}
+        { ...(!active && modalAttr)}
+      >
+        {
+          active ? 
+            <div className="Wallet-Connect">
+              <p>{account.substr(0, 6) + "..." + account.substr(-4)}</p>
+            </div>
+          :
+            <div className="Wallet-NotConnect">
+              <p>Connect Wallet</p>
+            </div>
+        }
+      </a>
+    </>
   );
 }
 
