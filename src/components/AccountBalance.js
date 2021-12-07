@@ -7,10 +7,11 @@ import Loading from '../components/Loading';
 import { updateStatus } from "../store/actions/change.action";
 import slogo from "../assets/images/icons/logo.png";
 
-const StakingAddress = "0x427E5c6Cca3C918CD3CD7C2744aD130F5D11449b";
+import config from "../config.json";
+
+const  { StakingAddress } = config;
 
 const duration = 24 * 25 * 3600 ;
-
 const locations = [
    {
       label: <span><img src={slogo} width="20px" height="20px"/>MSDOGE</span>,

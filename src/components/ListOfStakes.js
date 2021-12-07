@@ -11,7 +11,9 @@ import wallet from "../assets/images/icons/wallet-icon.svg";
 import logo from '../assets/images/favicon.png';
 import { connect } from 'react-redux';
 
-const StakingAddress = "0x427E5c6Cca3C918CD3CD7C2744aD130F5D11449b";
+import config from "../config.json";
+
+const  { StakingAddress } = config;
 
 function ListOfStakes(props) {
    const { account, activate } = useWeb3React();
