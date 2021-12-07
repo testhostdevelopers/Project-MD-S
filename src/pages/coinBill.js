@@ -20,7 +20,7 @@ export default function coinBill() {
                                         <h2 className="color-primary">1.14005 </h2>
                                         <div style={{ marginLeft: "15px" }}>MSDOGE</div>
                                     </div>
-                                    <h4 className="mb-2 mt-2 color-primary">0.0448859 <span>LORIA</span></h4>
+                                    <h4 className="mb-2 mt-2 color-primary">0.0448859 <span>CRYPTO</span></h4>
                                     <h5 className="mb-3">0.0448859  <span>ETH</span></h5>
                                 </div>
                                 <div className="withdraw-text mb-2">

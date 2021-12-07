@@ -566,6 +566,7 @@ export default function ListOfBounds() {
                <div className="modal-content gray-bg">
                   <div className="modal-body popup-card-container rel">
                      <button type="button" className="closebtn" data-bs-dismiss="modal" aria-label="Close" style={{ right: "15px" }}>
+
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M10.0001 8.82227L14.1251 4.69727L15.3034 5.8756L11.1784 10.0006L15.3034 14.1256L14.1251 15.3039L10.0001 11.1789L5.87511 15.3039L4.69678 14.1256L8.82178 10.0006L4.69678 5.8756L5.87511 4.69727L10.0001 8.82227Z" fill="black" />
                         </svg>
@@ -617,7 +618,6 @@ export default function ListOfBounds() {
          </div>
 
          {/* Modal */}
-
          <div className="modal fade" id="claimCoinPopup" tabIndex="-1" aria-labelledby="claimCoinPopup" aria-hidden="true">
             <div className="modal-dialog">
                <div className="modal-content">
@@ -707,7 +707,6 @@ export default function ListOfBounds() {
 
 
          {/* Modal */}
-
          <div className="modal fade" id="msDogeApprove" tabIndex="-1" aria-labelledby="msDogeApprove" aria-hidden="true">
             <div className="modal-dialog">
                <div className="modal-content">
@@ -855,7 +854,6 @@ export default function ListOfBounds() {
          </div>
 
          {/* Modal */}
-
          <div className="modal fade" id="hadesPopup" tabIndex="-1" aria-labelledby="hadesPopup" aria-hidden="true">
             <div className="modal-dialog">
                <div className="modal-content">

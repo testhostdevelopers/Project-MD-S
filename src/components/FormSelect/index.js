@@ -9,8 +9,6 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 	const toggleDropdown = () => setOpen(!isOpen);
 	
 	const handleItemClick = (value) => {
-		//console.log(value);
-		//console.log(selectedItem);
 		selectedItem == value ? setSelectedItem(value) : setSelectedItem(value);
 		toggleDropdown();
 	}
@@ -46,10 +44,6 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 		</div>
 	  
 	);
-  };
-  
-  FormSelect.propTypes = {
-	
   };
   
   export default FormSelect;
