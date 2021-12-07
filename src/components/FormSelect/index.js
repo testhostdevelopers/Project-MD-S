@@ -9,8 +9,6 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 	const toggleDropdown = () => setOpen(!isOpen);
 	
 	const handleItemClick = (value) => {
-		//console.log(value);
-		//console.log(selectedItem);
 		selectedItem == value ? setSelectedItem(value) : setSelectedItem(value);
 		toggleDropdown();
 	}
@@ -32,7 +30,6 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 				</div>
 				<div className={`dropdown-body ${isOpen && 'open'}`}>
 				{items.map(item => (
-					console.log(item.value),
 					<div className={`dropdown-item ${item.value == selectedItem && 'selected'}`} onClick={e => handleItemClick(e.target.id)} id={item.value}>
 						<img src={item.img}/>
 						{item.label}
@@ -43,10 +40,6 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 		</div>
 	  
 	);
-  };
-  
-  FormSelect.propTypes = {
-	
   };
   
   export default FormSelect;
