@@ -223,220 +223,224 @@ export default function ListOfBounds() {
             <div className="row">
                <div className="col-12">
                   <table className="stake-list-sel fliter-box w-100 my-4 d-none d-md-block">
-                     <tr>
-                        <td className="p-2">
-                           <select>
-                              <option>Asset</option>
-                              <option>Asset</option>
-                              <option>Asset</option>
-                           </select>
-                        </td>
-                        <td className="p-2">
-                           <select>
-                              <option>Bond</option>
-                              <option>Bond</option>
-                              <option>Bond</option>
-                           </select>
-                        </td>
-                        <td className="p-2">
-                           <select>
-                              <option>Price</option>
-                              <option>Price</option>
-                              <option>Price</option>
-                           </select>
-                        </td>
-                        <td className="p-2">
-                           <select>
-                              <option>ROI</option>
-                              <option>ROI</option>
-                              <option>ROI</option>
-                           </select>
-                        </td>
-                        <td className="p-2">
-                           <select>
-                              <option>Purchased</option>
-                              <option>Purchased</option>
-                              <option>Purchased</option>
-                           </select>
-                        </td>
-                        <td className="p-2"></td>
-                        <td className="p-2"></td>
-                     </tr>
-                     <tr className="m-0">
-                        <td className="p-2">
-                           <div className="bonds_data_set_coin_icons">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
+                     <thead>
+                        <tr>
+                           <td className="p-2">
+                              <select>
+                                 <option>Asset</option>
+                                 <option>Asset</option>
+                                 <option>Asset</option>
+                              </select>
+                           </td>
+                           <td className="p-2">
+                              <select>
+                                 <option>Bond</option>
+                                 <option>Bond</option>
+                                 <option>Bond</option>
+                              </select>
+                           </td>
+                           <td className="p-2">
+                              <select>
+                                 <option>Price</option>
+                                 <option>Price</option>
+                                 <option>Price</option>
+                              </select>
+                           </td>
+                           <td className="p-2">
+                              <select>
+                                 <option>ROI</option>
+                                 <option>ROI</option>
+                                 <option>ROI</option>
+                              </select>
+                           </td>
+                           <td className="p-2">
+                              <select>
+                                 <option>Purchased</option>
+                                 <option>Purchased</option>
+                                 <option>Purchased</option>
+                              </select>
+                           </td>
+                           <td className="p-2"></td>
+                           <td className="p-2"></td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr className="m-0">
+                           <td className="p-2">
+                              <div className="bonds_data_set_coin_icons">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
 
-                           <div className="bonds_data_set_coin_icons">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>DAI</b> </h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>$838</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>1.64%</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b className="text-read">$3,462,530</b></h5>
-                        </td>
-                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
-                        <td className="p-2">
-                           <a href="#" className="dots">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                              </svg>
-                           </a>
-                        </td>
-                     </tr>
-                     <tr className="m-0">
-                        <td className="p-2">
-                           <div className="bonds_data_set_coin_icons">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
+                              <div className="bonds_data_set_coin_icons">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>DAI</b> </h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>$838</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>1.64%</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b className="text-read">$3,462,530</b></h5>
+                           </td>
+                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2">
+                              <a href="#" className="dots">
+                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                 </svg>
+                              </a>
+                           </td>
+                        </tr>
+                        <tr className="m-0">
+                           <td className="p-2">
+                              <div className="bonds_data_set_coin_icons">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
 
-                           <div className="bonds_data_set_coin_icons eth">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>DAI-ETH</b> </h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>$838</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>1.64%</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b className="text-read">$3,462,530</b></h5>
-                        </td>
-                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
-                        <td className="p-2">
-                           <a href="#" className="dots">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                              </svg>
-                           </a>
-                        </td>
-                     </tr>
-                     <tr className="m-0">
-                        <td className="p-2">
-                           <div className="bonds_data_set_coin_icons">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
+                              <div className="bonds_data_set_coin_icons eth">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>DAI-ETH</b> </h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>$838</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>1.64%</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b className="text-read">$3,462,530</b></h5>
+                           </td>
+                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2">
+                              <a href="#" className="dots">
+                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                 </svg>
+                              </a>
+                           </td>
+                        </tr>
+                        <tr className="m-0">
+                           <td className="p-2">
+                              <div className="bonds_data_set_coin_icons">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
 
-                           <div className="bonds_data_set_coin_icons eth">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>DAI-ETH</b> </h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>$838</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>1.64%</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b className="text-read">$3,462,530</b></h5>
-                        </td>
-                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
-                        <td className="p-2">
-                           <a href="#" className="dots">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                              </svg>
-                           </a>
-                        </td>
-                     </tr>
-                     <tr className="m-0">
-                        <td className="p-2">
-                           <div className="bonds_data_set_coin_icons">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
+                              <div className="bonds_data_set_coin_icons eth">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>DAI-ETH</b> </h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>$838</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>1.64%</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b className="text-read">$3,462,530</b></h5>
+                           </td>
+                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2">
+                              <a href="#" className="dots">
+                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                 </svg>
+                              </a>
+                           </td>
+                        </tr>
+                        <tr className="m-0">
+                           <td className="p-2">
+                              <div className="bonds_data_set_coin_icons">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
 
-                           <div className="bonds_data_set_coin_icons eth">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>DAI-ETH</b> </h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>$838</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>1.64%</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b className="text-read">$3,462,530</b></h5>
-                        </td>
-                        <td className="p-2"> <button style={{ fontSize: "11px" }} data-bs-toggle="modal" data-bs-target="#claimCoinPopup" type="button" className="table-btn btn py-2 px-4">Sold Out</button></td>
-                        <td className="p-2">
-                           <a className="dots text-read" data-bs-toggle="modal" data-bs-target="#cancelStake">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                              </svg>
-                           </a>
-                        </td>
-                     </tr>
-                     <tr className="m-0">
-                        <td className="p-2">
-                           <div className="bonds_data_set_coin_icons">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
+                              <div className="bonds_data_set_coin_icons eth">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>DAI-ETH</b> </h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>$838</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>1.64%</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b className="text-read">$3,462,530</b></h5>
+                           </td>
+                           <td className="p-2"> <button style={{ fontSize: "11px" }} data-bs-toggle="modal" data-bs-target="#claimCoinPopup" type="button" className="table-btn btn py-2 px-4">Sold Out</button></td>
+                           <td className="p-2">
+                              <a className="dots text-read" data-bs-toggle="modal" data-bs-target="#cancelStake">
+                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                 </svg>
+                              </a>
+                           </td>
+                        </tr>
+                        <tr className="m-0">
+                           <td className="p-2">
+                              <div className="bonds_data_set_coin_icons">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
 
-                           <div className="bonds_data_set_coin_icons eth">
-                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
-                              </svg>
-                           </div>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>DAI-ETH</b> </h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>$838</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b>1.64%</b></h5>
-                        </td>
-                        <td className="p-2">
-                           <h5><b className="text-read">$3,462,530</b></h5>
-                        </td>
-                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
-                        <td className="p-2">
-                           <a href="#" className="dots">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-                              </svg>
-                           </a>
-                        </td>
-                     </tr>
+                              <div className="bonds_data_set_coin_icons eth">
+                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0C24.837 0 32 7.163 32 16C32 24.837 24.837 32 16 32C7.163 32 0 24.837 0 16C0 7.163 7.163 0 16 0ZM15.829 8H9.277V13.194H7V15.055H9.277V17.008H7V18.868H9.277V24H15.829C19.769 24 22.767 21.905 23.92 18.869H26V17.009H24.376C24.416 16.679 24.436 16.341 24.436 15.999V15.953C24.436 15.649 24.42 15.349 24.389 15.055H26V13.195H23.959C22.835 10.114 19.814 8 15.829 8ZM21.913 18.869C20.906 20.944 18.742 22.331 15.829 22.331H11.109V18.869H21.913ZM22.477 15.055C22.519 15.362 22.541 15.677 22.541 15.999V16.044C22.541 16.373 22.518 16.694 22.474 17.008H11.108V15.055H22.478H22.477ZM15.83 9.666C18.756 9.666 20.927 11.09 21.928 13.194H11.108V9.666H15.828H15.83Z" fill="black" />
+                                 </svg>
+                              </div>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>DAI-ETH</b> </h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>$838</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b>1.64%</b></h5>
+                           </td>
+                           <td className="p-2">
+                              <h5><b className="text-read">$3,462,530</b></h5>
+                           </td>
+                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2">
+                              <a href="#" className="dots">
+                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                 </svg>
+                              </a>
+                           </td>
+                        </tr>
+                     </tbody>
                   </table>
                   <ul className="stake-list-sel fliter-box d-flex flex-wrap my-4 ls p-0 d-block d-md-none">
                      <li className="col mb-3 mb-md-0 me-3">

@@ -70,12 +70,10 @@ export default function Navbar() {
                            </ul>
                            <div className="float-end d-none d-lg-block">
                               <div className="d-flex align-items-center right-butns">
-                                 {/* <a href="#" className="top-btn order-lg-2 me-4 ms-lg-4 me-lg-0">
-                                 EDEN DeFi 
-                                 </a> */}
+                                 <button onClick={() => themeToggler()} className="moon-icon order-lg-1"></button>
                                  <div className="order-lg-2">
                                     <ConnectWallet />
-         >>>>>>> a8ae1083048c0f1e136fa7ac4b57f158665ce0a1
+                                    
                                  </div>
                               </div>
                               </div>
