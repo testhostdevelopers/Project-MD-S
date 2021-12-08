@@ -70,7 +70,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fcfcfc;
+  background: #FCFCFC !important;
   overflow-x: hidden;
 }
 .App .container-lg {
@@ -2027,6 +2027,27 @@ div.acc-heading-text h2 > span {
 
 .slippage_description{
   color: #aaa;
+}
+
+.select-coin option:before {
+  content: "12";
+}
+
+.dd-header-title  span {
+  align-items: center;
+}
+
+.dd-header > span {
+  display: none !important;
+}
+
+
+.line-graph{
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  margin-bottom: 40px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
 }
 
 .select-coin option:before {
