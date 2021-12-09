@@ -2041,13 +2041,26 @@ div.acc-heading-text h2 > span {
   display: none !important;
 }
 
-
 .line-graph{
   background-color: #fff;
   border-radius: 12px;
   padding: 40px 30px;
   margin-bottom: 40px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.03));
+}
+
+
+
+.line-graph-a{
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
+}
+
+.line-graph-a h4{
+  color: #F6CE0E;
+  margin-bottom: 10px;
 }
 
 .select-coin option:before {
@@ -2060,4 +2073,23 @@ div.acc-heading-text h2 > span {
 
 .dd-header > span {
   display: none !important;
+}
+
+.line-graph-gutter{
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  margin-bottom: 40px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
+}
+
+@media only screen and (max-width: 768px){
+  .line-graph-a{
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
+  margin-bottom: 20px;
+  }
+
+  .line-graph-gutter{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0)) !important;
+  }
 }
