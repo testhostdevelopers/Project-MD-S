@@ -30,7 +30,7 @@ export const darkTheme = {
 }
 export const GlobalStyles = createGlobalStyle`
 body, .coin-main, .line-graph-gutter{
-    background: ${props => props.theme.body};
+    background: ${props => props.theme.body} !important;
 }
 .gray-bg, .gray-bg h1, .gray-bg h2, .gray-bg h3, .gray-bg h4, .gray-bg h5, .gray-bg h6, .gray-bg span, .gray-bg h5 span, .gray-bg h3 span, .gray-bg h4 span{
   background: ${props => props.theme.gray};

@@ -70,7 +70,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #FCFCFC !important;
+  background: #FCFCFC;
   overflow-x: hidden;
 }
 .App .container-lg {
