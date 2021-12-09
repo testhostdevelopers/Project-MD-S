@@ -83,7 +83,7 @@ export default function ListOfBounds() {
                         <td className="p-2">
                            <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                        <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#msDogeApprove" type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                         <td className="p-2">
                            <a href="#" className="dots">
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,7 +118,7 @@ export default function ListOfBounds() {
                         <td className="p-2">
                            <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                        <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#msDogeApprove" type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                         <td className="p-2">
                            <a href="#" className="dots">
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -153,7 +153,7 @@ export default function ListOfBounds() {
                         <td className="p-2">
                            <h5><b className="text-read">$3,462,530</b></h5>
                         </td>
-                        <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                        <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#msDogeApprove" type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                         <td className="p-2">
                            <a href="#" className="dots">
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -291,7 +291,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#msDogeApprove"  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                               <a href="#" className="dots">
                                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -326,7 +326,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#msDogeApprove"  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                               <a href="#" className="dots">
                                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -361,7 +361,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#msDogeApprove"  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                               <a href="#" className="dots">
                                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -431,7 +431,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#msDogeApprove"  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                               <a href="#" className="dots">
                                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

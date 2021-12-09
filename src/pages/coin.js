@@ -119,7 +119,7 @@ function Coin(props) {
                                     </div>
 
                                     <div className="stake-btn-outline">
-                                        <a className="btn" data-bs-toggle="modal" data-bs-target="#msDogeApprove">Migrate</a>
+                                        <a className="btn">Migrate</a>
                                     </div>
                                 </div>
                             </div>
