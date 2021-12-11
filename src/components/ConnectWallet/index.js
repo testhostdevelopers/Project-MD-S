@@ -22,7 +22,7 @@ export default function ConnectWallet () {
             </div>
           :
             <div className="Wallet-NotConnect">
-              <p>Connect Wallet</p>
+              <p>Buy MSDOGE</p>
             </div>
         }
       </a>
