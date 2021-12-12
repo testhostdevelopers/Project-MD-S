@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './style.css';
 
 const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
@@ -12,12 +12,9 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 		selectedItem == value ? setSelectedItem(value) : setSelectedItem(value);
 		toggleDropdown();
 	}
-	
-	// let OpenClass = () => {
-	// 	if(  )
-	// }
 
 	return (
+		<>
 		<div className="form-field m-0" onClick={() => toggleDropdown() }>
 			<label>
  				{title}
@@ -26,7 +23,7 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 				<div className='dropdown-header' onClick={() => toggleDropdown()}>
 				<img src={selectedItem ? items.find(item => item.value == selectedItem).img : defaultValue}/>
 				{selectedItem ? items.find(item => item.value == selectedItem).label : defaultValue}
-				<i classNameName={`icon ${isOpen && "open"}`}></i>
+				<i className={`icon ${isOpen && "open"}`}></i>
 				</div>
 				<div className={`dropdown-body ${isOpen && 'open'}`}>
 				{items.map((item, idx) => (
@@ -42,7 +39,7 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 				</div>
 			</div>
 		</div>
-	  
+	  </>
 	);
   };
   

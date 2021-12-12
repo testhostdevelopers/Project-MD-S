@@ -998,6 +998,14 @@ header .navbar {
   border-radius: 6px;
 }
 
+.heading-text-stake{
+  flex: 1;
+}
+
+.stake-bonds-outline-container{
+  flex: 2;
+}
+
 .stake-btn-outline .btn{
   width: 150px;
   height: 48px;
@@ -1008,7 +1016,6 @@ header .navbar {
   font-family: var(--amitSemi);
   padding: 15px 40px 11px 40px;
   border-radius: 6px;
-  margin: 0 10px;
 }
 
 .stake-list-sel select {
