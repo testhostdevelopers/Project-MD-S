@@ -991,18 +991,21 @@ header .navbar {
 .stake-btn .btn {
   background: var(--primary);
   font-size: 14px;
-  color: var(--black);
   font-family: var(--amitSemi);
+  width: 150px;
+  height: 48px;
   padding: 15px 40px 11px 40px;
   border-radius: 6px;
   margin-right: 10px;
 }
 
 .stake-btn-outline .btn{
+  width: 150px;
+  height: 48px;
   background: transparent;
   border: solid 2px var(--primary);
   font-size: 14px;
-  color: var(--primary);
+  color: var(--black);
   font-family: var(--amitSemi);
   padding: 15px 40px 11px 40px;
   border-radius: 6px;
@@ -1033,11 +1036,18 @@ select::-ms-expand {
   display: none;
 }
 
+.table-btn.color5{
+  color: #fff;
+}
+
 .closebtn {
   background: none;
   border: none;
   width: 30px;
   height: 30px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 .heading-text-popup h5 {
   font-size: 14px;
@@ -1188,12 +1198,20 @@ select::-ms-expand {
 .table-btn {
 	background: #cdcdcd;
 	border: none;
-	border-radius: 10px;
 	color: var(--black);
-	padding: 12px 24px 10px 24px !important;
 	font-family: var(--amitSemi);
+    font-size: 14px;
+    width: 94px;
+    height: 48px;
+    padding: 15px 40px 11px 40px;
+    border-radius: 6px;
 }
-.stake-list-sel tr + tr {
+
+.stake-list-sel thead tr{
+  border: none !important;
+}
+
+.stake-list-sel tr{
   border: 1px solid #dee2e6;
 }
 /***white theme***/
@@ -1776,7 +1794,7 @@ div.acc-heading-text h2 > span {
     overflow: visible;
   }
   .new-data p {
-    font-size: 14px;
+    font-size: 12px;
   }
   .new-data h5{
     font-size: 18px;
@@ -2083,6 +2101,11 @@ div.acc-heading-text h2 > span {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
 }
 
+.msDogeStaking-container, .stake-bonds-outline-container{
+  display: flex;
+  justify-content: space-between;
+}
+
 @media only screen and (max-width: 768px){
   .line-graph-a{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
@@ -2092,4 +2115,38 @@ div.acc-heading-text h2 > span {
   .line-graph-gutter{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0)) !important;
   }
+
+  .msDogeStaking-container{
+    flex-direction: column !important;
+  }
+
+  .heading-text-stake{
+    margin-bottom: 15px !important;
+  }
+
+  .msDogeStaking-container .stake-btn-outline .btn,
+  .msDogeStaking-container .stake-btn .btn{
+    width: auto !important;
+    padding: 15px 20px 15px 20px !important;
+  }
+}
+
+.ml-1{
+  margin-left: 1px !important;
+}
+
+.ml-2{
+  margin-left: 6px !important;
+}
+
+.list-stake table tr td small b{
+  font-size: 11px;
+}
+
+.new-data .gray-bg p{
+  font-size: 14px;
+}
+
+.new-data .gray-bg h5 b{
+  font-size: 18px;
 }

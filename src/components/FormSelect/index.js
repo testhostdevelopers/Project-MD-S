@@ -18,7 +18,7 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 	// }
 
 	return (
-		<div className="form-field" onClick={() => toggleDropdown() }>
+		<div className="form-field m-0" onClick={() => toggleDropdown() }>
 			<label>
  				{title}
  			</label>
@@ -26,7 +26,7 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 				<div className='dropdown-header' onClick={() => toggleDropdown()}>
 				<img src={selectedItem ? items.find(item => item.value == selectedItem).img : defaultValue}/>
 				{selectedItem ? items.find(item => item.value == selectedItem).label : defaultValue}
-				<i className={`icon ${isOpen && "open"}`}></i>
+				<i classNameName={`icon ${isOpen && "open"}`}></i>
 				</div>
 				<div className={`dropdown-body ${isOpen && 'open'}`}>
 				{items.map((item, idx) => (

@@ -104,12 +104,12 @@ function Coin(props) {
 
                         </div>
                         <div className="col-md-7 col-lg-8">
-                            <div className="d-flex justify-content-between">
+                            <div className="msDogeStaking-container">
                                 <div className="heading-text-stake ms">
-                                    <h2>MsDoge Staking</h2>
-                                    <p>List of stakes below</p>
+                                    <h2> {stakeBalance === false ? "MsDoge Staking" : "MsDoge Bonding"}</h2>
+                                    <p>{stakeBalance === false ? "List of Active Stake" : "List of Active Bonds"}</p>
                                 </div>
-                                <div className="d-flex">
+                                <div className="stake-bonds-outline-container">
                                     <div className={stakeBalance === false ? "stake-btn" : "stake-btn-outline"}> 
                                         <a className="btn" onClick={() => setStakeBalance(false)}>Stake</a>
                                     </div>

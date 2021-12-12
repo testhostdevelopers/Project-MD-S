@@ -23,7 +23,7 @@ const index = () => {
                         <div>
                             <div className="mb-3">
                                 <p>MsDoge Price</p>
-                                <h5><b>$1.18$</b></h5>
+                                <h5><b>$1.18</b></h5>
                             </div>
 
                             <div>
@@ -37,14 +37,13 @@ const index = () => {
                             <div className="mb-3">
                                 <p>MsDoge Market cap</p>
                                 <div className="d-flex">
-                                    <h5><b>10.5M</b> </h5>
-                                    <small style={{ marginLeft: "25px" }}>$ 12.45M USD</small>
+                                    <h5><b>$10.5<sub style={{ bottom: "0" }}>M</sub></b> </h5>
                                 </div>
                             </div>
 
                             <div>
                                 <p>Crypto Market cap</p>
-                                <h5><b>10.5M</b></h5>
+                                <h5><b>$10.5<sub style={{ bottom: "0" }}>M</sub></b> </h5>
                             </div>
                         </div>
 
@@ -53,7 +52,7 @@ const index = () => {
                             <div className="mb-3">
                                 <p>MsDoge Circulating supply</p>
                                 <div className="d-flex">
-                                    <h5><b>25.5M</b> </h5>
+                                    <h5><b>25.5<sub style={{ bottom: "0" }}>M</sub></b> </h5>
                                     <small style={{ marginLeft: "25px" }}>40.5% LOCKED</small>
                                 </div>
                             </div>
@@ -61,7 +60,7 @@ const index = () => {
                             <div>
                                 <p>Crypto Circulating supply</p>
                                 <div className="d-flex">
-                                    <h5><b>25.5M</b> </h5>
+                                    <h5><b>25.5<sub style={{ bottom: "0" }}>M</sub></b> </h5>
                                     <small style={{ marginLeft: "25px" }}>40.5% LOCKED</small>
                                 </div>
                             </div>
@@ -73,18 +72,32 @@ const index = () => {
                     <div className="gray-bg p-3 d-flex justify-content-between">
                         <div>
                             <div className="mb-3">
-                                <p>MsDoge Staked</p>
+                                <p>Backing per MsDoge</p>
                                 <div className="d-flex">
-                                    <h5><b>10.5M</b></h5>
-                                    <small style={{ marginLeft: "25px" }}>$ 12.45M USD</small>
+                                    <h5><b>$852.81</b></h5>
                                 </div>
                             </div>
 
                             <div>
-                                <p>Crypto Staked</p>
+                                <p>Backing per MsDoge</p>
                                 <div className="d-flex">
-                                    <h5><b>10.5M</b></h5>
-                                    <small style={{ marginLeft: "25px" }}>$ 12.45M USD</small>
+                                    <h5><b>$1.18</b></h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="mb-3">
+                                <p>MsDoge Index</p>
+                                <div className="d-flex">
+                                    <h5><b>25.5<sub style={{ bottom: "0" }}>M</sub></b> </h5>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p>Crypto Index</p>
+                                <div className="d-flex">
+                                    <h5><b>36.84 sOHM</b></h5>
                                 </div>
                             </div>
                         </div>

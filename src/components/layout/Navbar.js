@@ -57,7 +57,7 @@ export default function Navbar() {
                         <div className="container-lg">
                            <a className="navbar-brand" href="#"><img src={logo} alt="Logo" /> <span>MsDoge</span></a>
                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                              <i className="fas fa-bars"></i>
+                              <i classNameName="fas fa-bars"></i>
                            </button>
                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
                               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">

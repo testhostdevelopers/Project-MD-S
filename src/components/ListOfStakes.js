@@ -84,39 +84,24 @@ function ListOfStakes(props) {
                      <thead>
                         <tr>
                            <td className="p-2">
-                              <select>
-                                 <option>Start date</option>
-                                 <option>Start date</option>
-                                 <option>Start date</option>
-                              </select>
+                              <small><b>Start date</b></small>
+                              <i className="fas fa-sort-down ml-2"></i>
                            </td>
                            <td className="p-2">
-                              <select>
-                                 <option>Amount of stake</option>
-                                 <option>Amount of stake</option>
-                                 <option>Amount of stake</option>
-                              </select>
+                              <small><b>Amount of stake</b></small>
+                              <i className="fas fa-sort-down ml-2"></i>
                            </td>
                            <td className="p-2">
-                              <select>
-                                 <option>APY</option>
-                                 <option>APY</option>
-                                 <option>APY</option>
-                              </select>
+                              <small><b>APY</b></small>
+                              <i className="fas fa-sort-down ml-2"></i>
                            </td>
                            <td className="p-2">
-                              <select>
-                                 <option>Amount of reward</option>
-                                 <option>Amount of reward</option>
-                                 <option>Amount of reward</option>
-                              </select>
+                              <small><b>Amount of reward</b></small>
+                              <i className="fas fa-sort-down ml-2"></i>
                            </td>
                            <td className="p-2">
-                              <select>
-                                 <option>Remaining time</option>
-                                 <option>Remaining time</option>
-                                 <option>Remaining time</option>
-                              </select>
+                              <small><b>Remaining time</b></small>
+                              <i className="fas fa-sort-down ml-2"></i>
                            </td>
                            <td className="p-2"></td>
                            <td className="p-2"></td>
@@ -289,7 +274,7 @@ function ListOfStakes(props) {
             <div className="modal-dialog">
                <div className="modal-content gray-bg">
                   <div className="modal-body popup-card-container rel">
-                     <button type="button" className="closebtn" data-bs-dismiss="modal" aria-label="Close" style={{ right: "15px" }}>
+                     <button type="button" className="closebtn" data-bs-dismiss="modal" aria-label="Close" style={{ right: "15px", position: "absolute" }}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M10.0001 8.82227L14.1251 4.69727L15.3034 5.8756L11.1784 10.0006L15.3034 14.1256L14.1251 15.3039L10.0001 11.1789L5.87511 15.3039L4.69678 14.1256L8.82178 10.0006L4.69678 5.8756L5.87511 4.69727L10.0001 8.82227Z" fill="black" />
                         </svg>
@@ -298,37 +283,37 @@ function ListOfStakes(props) {
                         <h5 className="my-3 text-center ">Connect to wallet</h5>
                         <form action="">
                            <div className="input-bal">
-                              <div className="row">
+                           <div className="row">
                                  <div className="mb-4 col-sm-12">
-                                    <div className="connect-wallet-login-border d-flex" onClick={() => connectMetamask() }>
+                                    <div className="connect-wallet-login-border d-flex">
                                        <img src={metamask} width="20" height="20" />
-                                       <div style={{ margin: "auto auto" }}>Metamask</div>
+                                       <div style={{ margin: "auto auto" }}><b>Metamask</b></div>
                                     </div>
 
                                     <div className="connect-wallet-login-border d-flex">
                                        <img src={wallet} width="20" height="20" />
-                                       <div style={{ margin: "auto auto" }}>WalletConnect</div>
+                                       <div style={{ margin: "auto auto" }}><b>WalletConnect</b></div>
                                     </div>
 
                                     <div className="connect-wallet-login-border d-flex">
                                        <img src={coin} width="20" height="20" />
-                                       <div style={{ margin: "auto auto" }}>Coinbase</div>
+                                       <div style={{ margin: "auto auto" }}><b>Coinbase</b></div>
                                     </div>
 
                                     <div className="connect-wallet-login-border d-flex">
                                        <img src={fortmatic} width="20" height="20" />
-                                       <div style={{ margin: "auto auto" }}>Fortmatic</div>
+                                       <div style={{ margin: "auto auto" }}><b>Fortmatic</b></div>
                                     </div>
 
                                     <div className="connect-wallet-login-border d-flex">
                                        <img src={metamask} width="20" height="20" />
-                                       <div style={{ margin: "auto auto" }}>Portis</div>
+                                       <div style={{ margin: "auto auto" }}><b>Portis</b></div>
                                     </div>
                                  </div>
 
                                  <div className="col-sm-12">
                                     <div className="connect-wallet-popup text-center">
-                                       <small><p>New to Ethereum? <a href="#" className="click-btn"> Learn more about MsDoge</a> </p></small>
+                                       <small><p><a href="#" className="click-btn"> Learn more about MsDoge</a> </p></small>
                                     </div>
                                  </div>
                               </div>

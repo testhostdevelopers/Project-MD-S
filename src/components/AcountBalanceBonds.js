@@ -6,7 +6,7 @@ return (
       <div className="acc-heading-text ms">
          <h6 className="mb-3">Account balance</h6>
          <h2>574.00 <span>MSDOGE</span></h2>
-         <h4 className="mb-2"><span style={{color: "#F7CE0E"}}>0.0448859</span> <span>CRYPTO</span></h4>
+         <h4 className="mb-2"><span style={{color: "#F7CE0E"}}>0.0448859</span> <span style={{fontWeight: "500"}}>CRYPTO</span></h4>
          <h4 className="mt-3">1.852342129 <span>ETH</span></h4>
       </div>
       <div className="withdraw-text ms mt-2">

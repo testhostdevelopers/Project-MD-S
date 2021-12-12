@@ -212,7 +212,7 @@ function AccountBalance(props) {
             <div className="acc-heading-text ms">
                <h6 className="mb-3">Account balance</h6>
                <h2>{dogeB} <span>MSDOGE</span></h2>
-               <h4 className="mb-2"><span style={{color: "#F7CE0E"}} className="text-bold">{loriaB}</span> <span>CRYPTO</span></h4>
+               <h4 className="mb-2"><span style={{color: "#F7CE0E"}} className="text-bold">{loriaB}</span> <span style={{fontWeight: "500"}}>CRYPTO</span></h4>
                <h4 className="mt-3">{ethB} <span>ETH</span></h4>
             </div>
             <div className="withdraw-text ms mt-2">
@@ -246,24 +246,6 @@ function AccountBalance(props) {
                   </div>
                   <div className="col-6 py-2 text-end">
                      <h3><span>Unclaimed reward</span></h3>
-                  </div>
-               </div>
-               <div className="row justify-content-center border-top">
-                  <div className="col-6 py-3 text-center">
-                     <button
-                        type="button"
-                        className="withdraw-btn mx-auto py-3 px-5"
-                        {
-                           ...(
-                              active && {
-                                 "data-bs-target" : "#exampleModal",
-                                 "data-bs-toggle" : "modal"
-                              }
-                           )
-                        }
-                     >
-                     Stake
-                     </button>
                   </div>
                </div>
                <div className="row border-top">

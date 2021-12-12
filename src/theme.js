@@ -13,7 +13,8 @@ export const lightTheme = {
     filter: 'invert(0)',
     red:'#e24c4b',
     black: '#000',
-    gray: "#F7F7F7"
+    gray: "#F7F7F7",
+    blackGold: "#000"
 
 }
 export const darkTheme = {
@@ -26,16 +27,25 @@ export const darkTheme = {
     filter: 'invert(1)',
     red:'#e24c4b',
     black: '#fff',
-    gray: "#454343"
+    gray: "#454343",
+    blackGold: "#f6ce0e"
 }
 export const GlobalStyles = createGlobalStyle`
 body, .coin-main, .line-graph-gutter{
     background: ${props => props.theme.body} !important;
 }
-.gray-bg, .gray-bg h1, .gray-bg h2, .gray-bg h3, .gray-bg h4, .gray-bg h5, .gray-bg h6, .gray-bg span, .gray-bg h5 span, .gray-bg h3 span, .gray-bg h4 span{
+.gray-bg, .gray-bg h1, .gray-bg h2, .gray-bg h3, .gray-bg h4, .gray-bg h6, .gray-bg span, .gray-bg h5 span, .gray-bg h3 span, .gray-bg h4 span{
   background: ${props => props.theme.gray};
   color: ${props => props.theme.black};
   box-shadow: none;
+}
+
+.stake-btn-outline .btn{
+  color: ${props => props.theme.blackGold};
+}
+
+.stake-btn .btn, .list-stake table tr td small b, .list-stake table tr td i{
+  color: ${props => props.theme.black};
 }
 
 .Play-Game ul li::before, .line-graph-a {
@@ -54,7 +64,7 @@ body, .coin-main, .line-graph-gutter{
     background-repeat: no-repeat;
     background-position: center;
   }
-  .s-box h3, .s-box h5, .s-box i, .stake-btn .btn, .approve-btn{
+  .s-box h3, .s-box h5, .s-box i, .approve-btn{
     color: ${props => props.theme.fontColor} !important;
   }
   .navbar-expand-lg .navbar-nav .nav-item .sub-menu li a {
@@ -73,7 +83,7 @@ body, .coin-main, .line-graph-gutter{
   }
   .form-field .dropdown-body .dropdown-item:hover,
   .form-field .dropdown-body .dropdown-item {
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.text} !important;
   }
 
   .fliter-box h5 b.red {
