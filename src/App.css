@@ -996,7 +996,6 @@ header .navbar {
   height: 48px;
   padding: 15px 40px 11px 40px;
   border-radius: 6px;
-  margin-right: 10px;
 }
 
 .stake-btn-outline .btn{
@@ -1009,7 +1008,7 @@ header .navbar {
   font-family: var(--amitSemi);
   padding: 15px 40px 11px 40px;
   border-radius: 6px;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .stake-list-sel select {
