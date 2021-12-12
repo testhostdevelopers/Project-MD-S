@@ -15,6 +15,7 @@ const FormSelect = ({ defaultValue,openValue,title,options, ...attrs }) => {
 
 	return (
 		<>
+		<div className="position-fixed" style={{width: "100%", height: "100vh", left: "0", top: "0", background: "none", display: isOpen === true ? 'block' : "none"}} onClick={() => setOpen(false)}></div>
 		<div className="form-field m-0" onClick={() => toggleDropdown() }>
 			<label>
  				{title}

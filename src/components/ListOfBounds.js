@@ -11,6 +11,9 @@ import logo from '../assets/images/favicon.png';
 export default function ListOfBounds() {
    const [counter, setCounter] = useState(1);
    const [boundTabs, setBoundTabs] = useState(false);
+   const [dataPrice, setDataPrice] = useState(1)
+
+   console.log(dataPrice)
 
    return (
       <React.Fragment>
@@ -28,8 +31,11 @@ export default function ListOfBounds() {
                            <i className="fas fa-sort-down ml-2"></i>
                         </td>
                         <td className="p-2">
-                           <small><b>Price</b></small>
-                           <i className="fas fa-sort-down ml-2"></i>
+                           <select onChange={(e) => setDataPrice(e.target.value)}>
+                              <option selected>Price</option>
+                              <option value="1">High to low</option>
+                              <option value="2">Low to hight</option>
+                           </select>
                         </td>
                         <td className="p-2">
                            <small><b>ROI</b></small>
