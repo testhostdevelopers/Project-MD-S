@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 
 import config from "../config.json";
 
-const  { StakingAddress } = config;
+const { StakingAddress } = config;
 
 function ListOfStakes(props) {
    const { account, activate } = useWeb3React();
@@ -23,7 +23,7 @@ function ListOfStakes(props) {
       stake: _Staking,
       balance,
       coin: _MSDOGE,
-      reward: _XMSDOGE, 
+      reward: _XMSDOGE,
       loriaCoin: _CRYPTOCOIN,
    } = props;
 
@@ -37,32 +37,32 @@ function ListOfStakes(props) {
       "data-bs-target": "#exampleModal"
    })
 
-   useEffect(async() => {
-      if  (account && _Staking) await getStakedList();
-   },[account])
+   useEffect(async () => {
+      if (account && _Staking) await getStakedList();
+   }, [account])
 
-   useEffect(async(preprops) => {
+   useEffect(async (preprops) => {
       if (preprops != props && account && _Staking) await getStakedList();
-   },[props])
+   }, [props])
 
    const connectMetamask = () => {
       try {
          activate(injected)
-       } catch (ex) {
+      } catch (ex) {
          console.log(ex);
-       }
+      }
    }
 
-   const getStakedList = async() => {
-      const list = await _Staking.methods.getStakedList().call({ from : account });
+   const getStakedList = async () => {
+      const list = await _Staking.methods.getStakedList().call({ from: account });
       const now = await _Staking.methods.getNow().call();
       setStakedList(list);
       setClaimNow(now);
    }
 
-   
-   
-   const Claim = async() => {
+
+
+   const Claim = async () => {
       setLoading(true);
 
       const LoriaR = _stakedList[activeIdx]._initBalance / 1000;
@@ -75,9 +75,9 @@ function ListOfStakes(props) {
 
    return (
       <React.Fragment>
-         { isLoading && <Loading/> }
+         {isLoading && <Loading />}
          <div className="list-stake ms">
-           
+
             <div className="row">
                <div className="col-12">
                   <table className="stake-list-sel fliter-box w-100 my-4 d-none d-md-block">
@@ -135,43 +135,43 @@ function ListOfStakes(props) {
                                     <td className="p-2">
                                        <h5>
                                           <b>
-                                          {
-                                             web3.utils.fromWei(item._claimedBalance,`${item._stakedToken == 0 ? "gwei" : "mwei"}`)
-                                          }
+                                             {
+                                                web3.utils.fromWei(item._claimedBalance, `${item._stakedToken == 0 ? "gwei" : "mwei"}`)
+                                             }
                                           </b>
-                                          { item._stakedToken == 0 ? " CRYPTO" : " MSDOGE" }
-                                          </h5>
+                                          {item._stakedToken == 0 ? " CRYPTO" : " MSDOGE"}
+                                       </h5>
                                     </td>
                                     <td className="p-2">
                                        <h5>
                                           {
                                              claimable ? <b className="text-read green">Ready to claim</b>
-                                             :(
-                                                item._claimedBalance == 0 ?
-                                                <b className="text-read red">Not ready</b>
-                                                :
-                                                <b className="text-read red">
-                                                   {
-                                                      HumanizeDuration((elig * duration - (_claimNow - updatedAt)) * 1000, {
-                                                         round: true,
-                                                         units: ["d", "h","m"],
-                                                         language: "shortEn",
-                                                         languages: {
-                                                            shortEn: {
-                                                               y: () => "y",
-                                                               mo: () => "mo",
-                                                               w: () => "w",
-                                                               d: () => "d",
-                                                               h: () => "h",
-                                                               m: () => "min",
-                                                               s: () => "s",
-                                                               ms: () => "ms",
-                                                            },
-                                                         },
-                                                      })
-                                                   }
-                                                </b>
-                                             )
+                                                : (
+                                                   item._claimedBalance == 0 ?
+                                                      <b className="text-read red">Not ready</b>
+                                                      :
+                                                      <b className="text-read red">
+                                                         {
+                                                            HumanizeDuration((elig * duration - (_claimNow - updatedAt)) * 1000, {
+                                                               round: true,
+                                                               units: ["d", "h", "m"],
+                                                               language: "shortEn",
+                                                               languages: {
+                                                                  shortEn: {
+                                                                     y: () => "y",
+                                                                     mo: () => "mo",
+                                                                     w: () => "w",
+                                                                     d: () => "d",
+                                                                     h: () => "h",
+                                                                     m: () => "min",
+                                                                     s: () => "s",
+                                                                     ms: () => "ms",
+                                                                  },
+                                                               },
+                                                            })
+                                                         }
+                                                      </b>
+                                                )
                                           }
                                        </h5>
                                     </td>
@@ -179,13 +179,13 @@ function ListOfStakes(props) {
                                        <button
                                           type="button"
                                           {
-                                             ...(claimable && {
-                                                "data-bs-toggle" : "modal",
-                                                "data-bs-target" : "#claimCoinPopup"
-                                             })
+                                          ...(claimable && {
+                                             "data-bs-toggle": "modal",
+                                             "data-bs-target": "#claimCoinPopup"
+                                          })
                                           }
                                           className={`table-btn py-2 px-4 ${claimable && 'btn'}`}
-                                          onClick={( claimable ? () => setActiveIdx(idx) : () => null )}
+                                          onClick={(claimable ? () => setActiveIdx(idx) : () => null)}
                                        >Claim</button>
                                     </td>
                                     <td className="p-2">
@@ -194,11 +194,11 @@ function ListOfStakes(props) {
                                           className="dots"
                                           data-bs-toggle="modal"
                                           {
-                                             ...(claimable &&
-                                                {
-                                                   "data-bs-target" : "#cancelStake"
-                                                }
-                                             )
+                                          ...(claimable &&
+                                          {
+                                             "data-bs-target": "#cancelStake"
+                                          }
+                                          )
                                           }
                                        >
                                           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -212,9 +212,9 @@ function ListOfStakes(props) {
                         }
                         {
                            !_stakedList.length &&
-                              <tr className="empty-row pt-3 pb-3 mt-1">
-                                 <td colSpan="7" className="justify-content-center w-100">No Stake</td>
-                              </tr>
+                           <tr className="empty-row pt-3 pb-3 mt-1">
+                              <td colSpan="7" className="justify-content-center w-100">No Stake</td>
+                           </tr>
                         }
                      </tbody>
                   </table>
@@ -267,7 +267,7 @@ function ListOfStakes(props) {
                </div>
             </div>
          </div>
-         
+
 
          {/* Modal */}
          <div className="modal fade" id="connectWallet" tabIndex="-1" aria-labelledby="connectWallet" aria-hidden="true">
@@ -283,7 +283,7 @@ function ListOfStakes(props) {
                         <h5 className="my-3 text-center ">Connect to wallet</h5>
                         <form action="">
                            <div className="input-bal">
-                           <div className="row">
+                              <div className="row">
                                  <div className="mb-4 col-sm-12">
                                     <div className="connect-wallet-login-border d-flex">
                                        <img src={metamask} width="20" height="20" />
@@ -313,7 +313,7 @@ function ListOfStakes(props) {
 
                                  <div className="col-sm-12">
                                     <div className="connect-wallet-popup text-center">
-                                       <small><p><a href="#" className="click-btn"> Learn more about MsDoge</a> </p></small>
+                                       <small><p><a href="#" className="click-btn"> <b>Learn more about MsDoge</b></a> </p></small>
                                     </div>
                                  </div>
                               </div>
@@ -361,7 +361,7 @@ function ListOfStakes(props) {
                                           type="button"
                                           className="table-btn btn py-2 px-4 w-100 mb-3"
                                           onClick={Claim}
-                                          >Claim</button>
+                                       >Claim</button>
                                        {/* <div className="claim-btn-failed color5 py-2 px-4 w-100 text-center"><b>Transcation failed</b></div> */}
                                     </div>
                                  </div>

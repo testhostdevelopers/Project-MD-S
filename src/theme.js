@@ -14,7 +14,8 @@ export const lightTheme = {
     red:'#e24c4b',
     black: '#000',
     gray: "#F7F7F7",
-    blackGold: "#000"
+    blackGold: "#000",
+    grayBg: "none"
 
 }
 export const darkTheme = {
@@ -28,7 +29,8 @@ export const darkTheme = {
     red:'#e24c4b',
     black: '#fff',
     gray: "#454343",
-    blackGold: "#f6ce0e"
+    blackGold: "#f6ce0e",
+    grayBg: "#cdcdcd"
 }
 export const GlobalStyles = createGlobalStyle`
 body, .coin-main, .line-graph-gutter{
@@ -46,6 +48,10 @@ body, .coin-main, .line-graph-gutter{
 
 .stake-btn .btn, .list-stake table tr td small b, .list-stake table tr td i{
   color: ${props => props.theme.black};
+}
+
+.connect-wallet-login-border{
+  background: ${props => props.theme.grayBg};
 }
 
 .Play-Game ul li::before, .line-graph-a {
