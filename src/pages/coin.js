@@ -115,7 +115,7 @@ function Coin(props) {
                                     </div>
 
                                     <div className={stakeBalance === false ? "stake-btn-outline" : "stake-btn"}>
-                                        <a className="btn" onClick={() => setStakeBalance(true)} >Claim</a>
+                                        <a className="btn" onClick={() => setStakeBalance(true)} >Bonding</a>
                                     </div>
 
                                     <div className="stake-btn-outline">

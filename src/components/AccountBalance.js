@@ -278,7 +278,7 @@ function AccountBalance(props) {
                            )
                         }
                      >
-                     Claim
+                     Bonding
                      </button>
                   </div>
                </div>
