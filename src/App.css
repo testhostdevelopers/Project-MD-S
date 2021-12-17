@@ -2152,6 +2152,14 @@ div.acc-heading-text h2 > span {
   font-size: 14px;
 }
 
-.new-data .gray-bg h5 b{
+.header-coin-title .new-data .gray-bg h5 b{
   font-size: 18px;
+}
+
+.header-coin-title small{
+  font-size: 10px;
+}
+
+.header-coin-title .new-data p{
+  font-size: 14px;
 }
