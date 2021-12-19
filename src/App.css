@@ -1212,10 +1212,10 @@ select::-ms-expand {
 .table-btn {
 	background: #cdcdcd;
 	border: none;
-	color: var(--black);
+	color: var(--white);
 	font-family: var(--amitSemi);
     font-size: 14px;
-    width: 94px;
+    width: 104px;
     height: 48px;
     padding: 15px 40px 11px 40px;
     border-radius: 6px;
@@ -2168,4 +2168,16 @@ div.acc-heading-text h2 > span {
 
 .header-coin-title .new-data p{
   font-size: 14px;
+}
+
+.bg-card-left{
+  width: 229px !important;
+}
+
+.bg-card-center{
+  width: 618px !important;
+}
+
+.bg-card-right{
+  width: 321px !important;
 }

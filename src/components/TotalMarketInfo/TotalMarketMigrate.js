@@ -5,7 +5,7 @@ const index = () => {
         <div className="col-sm-12 mb-4 new-data">
             <div className="row">
                 <div className="col-sm-12 col-lg-3 mb-4">
-                    <div className="gray-bg p-3">
+                    <div className="gray-bg p-3 bg-card-left">
                         <div className="mb-3">
                             <p>Total market size</p>
                             <h5><b>$5,231,468,525.00</b></h5>
@@ -19,7 +19,7 @@ const index = () => {
                 </div>
 
                 <div className="mb-4 col-sm-12 col-lg-6">
-                    <div className="gray-bg p-3 d-flex justify-content-between">
+                    <div className="gray-bg p-3 d-flex justify-content-between bg-card-center">
                         <div>
                             <div className="mb-3">
                                 <p>MsDoge cap</p>
@@ -61,7 +61,7 @@ const index = () => {
                 </div>
 
                 <div className="mb-4 col-sm-12 col-lg-3">
-                    <div className="gray-bg p-3 d-flex justify-content-between">
+                    <div className="gray-bg p-3 d-flex justify-content-between bg-card-right">
                         <div>
                             <div className="mb-3">
                                 <p>Market cap</p>
