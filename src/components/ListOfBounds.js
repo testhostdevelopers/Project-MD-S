@@ -628,23 +628,23 @@ export default function ListOfBounds() {
                         </svg>
                      </button>
                      <div className="heading-text-popupm">
-                        <h5 className="my-3 text-center ">Stake Settings</h5>
+                        <h5 className="my-3 text-center ">Bond Settings</h5>
                         <form action="">
                            <div className="input-bal">
                               <div className="row">
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
                                     <div><small>Pool reward</small></div>
-                                    <div><small>1.14005 URUS</small></div>
+                                    <div><small>1.14005 MSDODGE</small></div>
                                  </div>
 
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
-                                    <div><small>Pool Stake</small></div>
-                                    <div><small>Balance: 1.14005 URUS</small></div>
+                                    <div><small>Pool reward</small></div>
+                                    <div><small>Balance: 1234.145 CRYPTO</small></div>
                                  </div>
 
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">
-                                    <div><small>Penalty Pool reward</small></div>
-                                    <div><small>Balance: 1.14005 URUS</small></div>
+                                    <div><small>Pool Penalty</small></div>
+                                    <div><small>100% of Rewards</small></div>
                                  </div>
                                  <div className="col-sm-12">
                                     <div className="p-2 stake-btn">
@@ -700,8 +700,8 @@ export default function ListOfBounds() {
                         </main>
 
                         <div className="boundTabs_container">
-                           <button className={boundTabs === false ? "active" : ""} onClick={() => setBoundTabs(false)}>Bond</button>
-                           <button className={boundTabs === false ? "" : "active"} onClick={() => setBoundTabs(true)}>Redeem</button>
+                           <button className={boundTabs === false ? "" : "active"} onClick={() => setBoundTabs(false)}>Bond</button>
+                           <button className={boundTabs === false ? "active" : ""} onClick={() => setBoundTabs(true)}>Redeem</button>
                         </div>
 
                         {

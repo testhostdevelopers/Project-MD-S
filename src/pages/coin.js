@@ -6,6 +6,7 @@ import Footer from '../components/layout/Footer';
 import Navbar from "../components/layout/Navbar";
 import ListOfStakes from '../components/ListOfStakes';
 import ListOfBounds from '../components/ListOfBounds';
+import ListOfMigrate from '../components/ListOfMigrate';
 import TotalMarketInfo from '../components/TotalMarketInfo/index';
 
 import getWeb3 from '../components/utility/getWeb3.js';
@@ -17,14 +18,13 @@ import CRYPTOLORIA from "../contracts/CRYPTOLORIA.json";
 import { connect } from 'react-redux';
 import config from "../config.json";
 import AccountBalanceMigrate from '../components/AccountBalanceMigrate';
-import ListOfMigrate from '../components/ListOfMigrate';
 import TotalMarketInfoStake from '../components/TotalMarketInfo/TotalMarketInfoStake';
 import TotalMarketMigrate from '../components/TotalMarketInfo/TotalMarketMigrate';
 
 const { StakingAddress, DogeAddress, LoriaAddress, DogeRewardAddress, LoriaRewardAddress } = config;
 
 function Coin(props) {
-
+    
     const { active, account, library, connector, activate, deactivate } = useWeb3React();
     const [_web3, setWeb3] = useState({});
     const [_Stake, setStake] = useState({});

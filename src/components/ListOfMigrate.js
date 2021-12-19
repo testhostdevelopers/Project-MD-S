@@ -416,8 +416,8 @@ function ListOfMigrate(props) {
                         </main>
 
                         <div className="boundTabs_container">
-                           <button className={boundTabs === false ? "active" : ""} onClick={() => setBoundTabs(false)}>Bond</button>
-                           <button className={boundTabs === false ? "" : "active"} onClick={() => setBoundTabs(true)}>Redeem</button>
+                           <button className={boundTabs === false ? "" : "active"} onClick={() => setBoundTabs(true)}>Bond</button>
+                           <button className={boundTabs === false ? "active" : ""} onClick={() => setBoundTabs(false)}>Redeem</button>
                         </div>
 
                         {

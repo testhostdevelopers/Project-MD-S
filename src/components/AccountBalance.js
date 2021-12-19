@@ -266,7 +266,7 @@ function AccountBalance(props) {
                      </button>
                   </div>
                   <div className="col-6 py-3 text-center">
-                     <button
+                     <button data-bs-toggle="modal" data-bs-target="#msDogeApprove"
                         type="button"
                         className="withdraw-btn mx-auto py-3 px-5"
                         {
@@ -407,7 +407,7 @@ function AccountBalance(props) {
                         </svg>
                      </button>
                      <div className="heading-text-popupm">
-                        <h5 className="my-3 text-center ">Stake Settings</h5>
+                        <h5 className="my-3 text-center ">Bond Settings</h5>
                         <form action="">
                            <div className="input-bal">
                               <div className="row">
