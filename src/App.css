@@ -1304,7 +1304,7 @@ table.stake-list-sel.fliter-box tr {
   border: 1px solid #dee2e6;
 }
 table.stake-list-sel.fliter-box td {
-	width: 135px;
+	width: 120px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -1314,19 +1314,16 @@ table.stake-list-sel.fliter-box > tr:first-child {
 	border: none;
 }
 table.stake-list-sel.fliter-box td:nth-child(2) {
-	width: 120px;
+	width: 135px;
 }
 table.stake-list-sel.fliter-box td:nth-child(3) {
-	width: 140px;
+	width: 145px;
 }
 table.stake-list-sel.fliter-box td:nth-child(4) {
-	width: 160px;
-}
-table.stake-list-sel.fliter-box td:nth-last-child(2) {
-	width: 110px;
+	width: 155px;
 }
 table.stake-list-sel.fliter-box td:last-child {
-	width: 40px;
+	width: 50px;
 }
 
 .modal.fade div.modal-dialog {
