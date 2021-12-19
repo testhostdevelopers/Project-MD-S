@@ -49,8 +49,8 @@ return (
                </button>
             </div>
             <div className="col-6 py-3 text-center">
-               <button type="button" className="withdraw-btn mx-auto py-3 px-5">
-               Bonding
+               <button data-bs-toggle="modal" data-bs-target="#msDogeApprove" type="button" className="withdraw-btn mx-auto py-3 px-5">
+               Claim
                </button>
             </div>
          </div>

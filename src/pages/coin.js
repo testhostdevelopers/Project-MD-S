@@ -140,7 +140,7 @@ function Coin(props) {
                                     </div>
 
                                     <div className={stakeBalance === "bonding" ? "stake-btn" : stakeBalance === "bonding" ? "stake-btn-outline" : "stake-btn-outline"}>
-                                        <a className="btn" onClick={() => setStakeBalance("bonding")} >Bonding</a>
+                                        <a className="btn" onClick={() => setStakeBalance("bonding")} >Bonds</a>
                                     </div>
 
                                     <div className={stakeBalance === "migrate" ? "stake-btn" : stakeBalance === "bonding" ? "stake-btn-outline" : "stake-btn-outline"}>

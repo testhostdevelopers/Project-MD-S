@@ -1305,13 +1305,13 @@ table.stake-list-sel.fliter-box > tr:first-child {
 	border: none;
 }
 table.stake-list-sel.fliter-box td:nth-child(2) {
-	width: 160px;
+	width: 120px;
 }
 table.stake-list-sel.fliter-box td:nth-child(3) {
-	width: 100px;
+	width: 140px;
 }
 table.stake-list-sel.fliter-box td:nth-child(4) {
-	width: 170px;
+	width: 160px;
 }
 table.stake-list-sel.fliter-box td:nth-last-child(2) {
 	width: 110px;
@@ -2017,7 +2017,7 @@ div.acc-heading-text h2 > span {
 
 .boundTabs_container button.active{
   background: var(--bs-gray-900);
-  color: var(--white);
+  color: #fff;
 }
 
 @media only screen and (max-width: 768px){

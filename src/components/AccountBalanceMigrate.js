@@ -42,7 +42,7 @@ return (
             </div>
             <div className="col-6 py-3 text-center">
                <button type="button" className="withdraw-btn mx-auto py-3 px-5">
-               Bonding
+               Claim
                </button>
             </div>
          </div>
