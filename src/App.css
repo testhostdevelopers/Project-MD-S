@@ -2136,9 +2136,6 @@ div.acc-heading-text h2 > span {
     padding: 15px 20px 15px 20px !important;
   }
 
-  .bg-card-right, .bg-card-center, .bg-card-left{
-    width: 100% !important;
-  }
 }
 
 .ml-1{
@@ -2169,24 +2166,11 @@ div.acc-heading-text h2 > span {
   font-size: 14px;
 }
 
-.bg-card-left{
-  width: 229px;
-}
-
-.bg-card-center{
-  width: 618px;
-}
-
-.bg-card-right{
-  width: 321px;
-}
-
-
 .msDogeStaking-container, .stake-bonds-outline-container{
   display: flex;
   justify-content: flex-end;
 }
 
 .stake-bonds-outline-container .btn{
-  margin: 0 0 0 18px;
+  margin: 0 0 0 21px;
 }
