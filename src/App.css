@@ -2112,11 +2112,6 @@ div.acc-heading-text h2 > span {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
 }
 
-.msDogeStaking-container, .stake-bonds-outline-container{
-  display: flex;
-  justify-content: space-between;
-}
-
 @media only screen and (max-width: 768px){
   .line-graph-a{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
@@ -2139,6 +2134,10 @@ div.acc-heading-text h2 > span {
   .msDogeStaking-container .stake-btn .btn{
     width: auto !important;
     padding: 15px 20px 15px 20px !important;
+  }
+
+  .bg-card-right, .bg-card-center, .bg-card-left{
+    width: 100% !important;
   }
 }
 
@@ -2171,13 +2170,23 @@ div.acc-heading-text h2 > span {
 }
 
 .bg-card-left{
-  width: 229px !important;
+  width: 229px;
 }
 
 .bg-card-center{
-  width: 618px !important;
+  width: 618px;
 }
 
 .bg-card-right{
-  width: 321px !important;
+  width: 321px;
+}
+
+
+.msDogeStaking-container, .stake-bonds-outline-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stake-bonds-outline-container .btn{
+  margin: 0 0 0 18px;
 }
