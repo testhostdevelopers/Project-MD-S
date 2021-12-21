@@ -46,7 +46,7 @@ body, .coin-main, .line-graph-gutter{
   color: ${props => props.theme.blackGold};
 }
 
-.stake-btn .btn, .list-stake table tr td small b, .list-stake table tr td i{
+.list-stake table tr td small b, .list-stake table tr td i{
   color: ${props => props.theme.black};
 }
 
