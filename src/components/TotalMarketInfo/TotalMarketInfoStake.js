@@ -68,7 +68,7 @@ const TotalMarketInfoStake = () => {
                     </div>
                 </div>
 
-                <div className="mb-4 col-sm-12 col-lg-3">
+                <div className="mb-4 col-sm-12 col-lg-3" style={{paddingRight: "0"}}>
                     <div className="gray-bg p-3 d-flex justify-content-between bg-card-right">
                         <div>
                             <div className="mb-3">
