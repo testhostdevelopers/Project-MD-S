@@ -24,7 +24,7 @@ import TotalMarketMigrate from '../components/TotalMarketInfo/TotalMarketMigrate
 const { StakingAddress, DogeAddress, LoriaAddress, DogeRewardAddress, LoriaRewardAddress } = config;
 
 function Coin(props) {
-    
+
     const { active, account, library, connector, activate, deactivate } = useWeb3React();
     const [_web3, setWeb3] = useState({});
     const [_Stake, setStake] = useState({});
@@ -131,8 +131,31 @@ function Coin(props) {
                         <div className="col-md-7 col-lg-8 p-0">
                             <div className="msDogeStaking-container">
                                 <div className="heading-text-stake ms">
-                                    <h2> {stakeBalance === false ? "MsDoge Staking" : "MsDoge Bonding"}</h2>
-                                    <p>{stakeBalance === false ? "List of Active Stake" : "List of Active Bonds"}</p>
+                                    <h2>
+                                        {
+                                            stakeBalance === "stake" ?
+                                                "MsDoge Staking"
+                                                :
+                                                stakeBalance === "bonding"
+                                                ?
+                                                "MsDoge Bonding"
+                                                :
+                                                "MsDoge Migrate"
+                                        }
+                                    </h2>
+                                    <p>
+                                        {
+                                            stakeBalance === "stake" ?
+                                                "List of stakes below"
+                                                :
+                                                stakeBalance === "bonding"
+                                                ?
+                                                "List of bonds below"
+                                                :
+                                                "List of migrate below"
+                                        }
+
+                                    </p>
                                 </div>
                                 <div className="stake-bonds-outline-container">
                                     <div className={stakeBalance === "stake" ? "stake-btn" : stakeBalance === "bonding" ? "stake-btn-outline" : "stake-btn-outline"}>
