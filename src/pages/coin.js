@@ -128,7 +128,7 @@ function Coin(props) {
                             }
 
                         </div>
-                        <div className="col-md-7 col-lg-8 p-0">
+                        <div className="col-md-7 col-lg-8" style={{padding: "0 0 0 calc(var(--bs-gutter-x) * .5)"}}>
                             <div className="msDogeStaking-container">
                                 <div className="heading-text-stake ms">
                                     <h2>
