@@ -249,7 +249,7 @@ function AccountBalance(props) {
                      <h3><span>Unclaimed reward</span></h3>
                   </div>
                </div>
-               <div className="row justify-content-center border-top">
+               {/* <div className="row justify-content-center border-top">
                   <div className="col-6 py-3 text-center">
                      <button
                         type="button"
@@ -266,7 +266,7 @@ function AccountBalance(props) {
                      Stake
                      </button>
                   </div>
-               </div>
+               </div> */}
                <div className="row border-top">
                   <div className="col-6 py-3 text-center">
                      <button
