@@ -1054,7 +1054,7 @@ select::-ms-expand {
   border: none;
   width: 30px;
   height: 30px;
-
+  position: absolute;
   top: 15px;
 }
 
@@ -1081,7 +1081,7 @@ select::-ms-expand {
 .input-bal .input-box {
 	border: none;
 	color: #898989;
-	font-size: 12px;
+	font-size: 15px;
 	padding: 6px;
 	width: 100%;
 	background: #EDECEC;
@@ -2066,8 +2066,16 @@ div.acc-heading-text h2 > span {
   align-items: center;
 }
 
-.dd-header > span {
+.small-logo-photo .dd-header > span {
   display: none !important;
+}
+
+.dd-header-title{
+  margin-right: -10px !important;
+}
+
+.crypto-select-icon .dd-header svg{
+  transform: scale(.7);
 }
 
 .line-graph{
@@ -2101,7 +2109,7 @@ div.acc-heading-text h2 > span {
 }
 
 .dd-header > span {
-  display: none !important;
+  display: none;
 }
 
 .line-graph-gutter{
