@@ -71,12 +71,12 @@ function AccountBalance(props) {
          let flag = false;
          if (totalDoge > 0) {
             await _XMSDOGE.methods.approve(StakingAddress, totalDoge).send({ from: account });
-            await _MSDOGE.methods.approve(StakingAddress, totalDoge).send({ from: account });
+            // await _MSDOGE.methods.approve(StakingAddress, totalDoge).send({ from: account });
             flag = true;
          }
 
          if (totalLoria > 0) {
-            await _CRYPTO.methods.approve(StakingAddress, totalLoria).send({ from: account });
+            // await _CRYPTO.methods.approve(StakingAddress, totalLoria).send({ from: account });
             await _XCRYPTO.methods.approve(StakingAddress, totalLoria).send({ from: account });
             flag = true;
          }
@@ -99,26 +99,17 @@ function AccountBalance(props) {
       } catch (err) {
          setLoading(false);
       }
+      window.$('#cancelStake').modal('hide');
    }
 
    const multipleClaim = async () => {
-      setLoading(true);
       setLoading(true);
       try {
          const totalDoge = web3.utils.toWei(_unClaimedDoge.toString(), 'gwei');
          const totalLoria = web3.utils.toWei(_unClaimedLoria.toString(), 'mwei');
          let flag = false;
-         if (totalDoge > 0) {
-            await _XMSDOGE.methods.approve(StakingAddress, totalDoge).send({ from: account });
-            await _MSDOGE.methods.approve(StakingAddress, totalDoge).send({ from: account });
-            flag = true;
-         }
-
-         if (totalLoria > 0) {
-            await _CRYPTO.methods.approve(StakingAddress, totalLoria).send({ from: account });
-            await _XCRYPTO.methods.approve(StakingAddress, totalLoria).send({ from: account });
-            flag = true;
-         }
+         if (totalDoge > 0) flag = true;
+         if (totalLoria > 0) flag = true;
 
          if (flag) {
             await _Staking.methods.multipleClaim().send({ from: account })
@@ -136,9 +127,10 @@ function AccountBalance(props) {
          }
 
       } catch (err) {
+         console.log(err);
          setLoading(false);
       }
-
+      window.$('#multiClaimCoinPopup').modal('hide');
       setLoading(false);
    }
 
@@ -153,9 +145,7 @@ function AccountBalance(props) {
             case 0:
                const dogeAmount = web3.utils.toWei(_stakingAmount.toString(), "gwei");
                await _MSDOGE.methods.approve(StakingAddress, dogeAmount).send({ from: account });
-               NotificationManager.info("Approved1", "Info");
-               await _XMSDOGE.methods.approve(StakingAddress, dogeAmount).send({ from: account })
-               NotificationManager.info("Approved2", "Info");
+               NotificationManager.info("Approved", "Info");
                await _Staking.methods.stake(activeCoin, dogeAmount, counter).send({ from: account })
                   .on('receipt', async (receipt) => {
                      NotificationManager.success("Success", ":)");
@@ -167,9 +157,7 @@ function AccountBalance(props) {
             case 1:
                const loriaAmount = web3.utils.toWei(_stakingAmount.toString(), "mwei");
                await _CRYPTO.methods.approve(StakingAddress, loriaAmount).send({ from: account });
-               NotificationManager.info("Approved1", "Info");
-               await _XCRYPTO.methods.approve(StakingAddress, loriaAmount).send({ from: account })
-               NotificationManager.info("Approved2", "Info");
+               NotificationManager.info("Approved", "Info");
                await _Staking.methods.stake(activeCoin, loriaAmount, counter).send({ from: account })
                   .on('receipt', async (receipt) => {
                      NotificationManager.success("Success", ":)");
@@ -182,6 +170,7 @@ function AccountBalance(props) {
       } catch (err) {
          setLoading(false);
       }
+      window.$("#stakingModal").modal('hide');
    }
 
    const getStakedList = async () => {
@@ -196,16 +185,17 @@ function AccountBalance(props) {
       list.map(item => {
          const updated_at = item._updated_at;
 
-         let count = Math.floor((now - updated_at) / (duration * item._dogeEli));
+         // let count = Math.floor((now - updated_at) / (duration * item._dogeEli));
+         let count = 1;
 
          if (item._stakedToken == 0) {
-            stakedDogeAmount += item._initBalance;
-            if (count > 0) rewardLoriaAmount += count * item._initBalance * item._dogeAPY / 100 / 1000;
+            stakedDogeAmount += Number(item._initBalance);
+            if (count > 0) rewardLoriaAmount += count * Number(item._initBalance) * Number(item._apy) / 100 / 1000;
          }
 
          else {
-            stakedLoriaAmount += item._initBalance;
-            if (count > 0) rewardDogeAmount += count * item._initBalance * item._dogeAPY / 100 * 1000;
+            stakedLoriaAmount += Number(item._initBalance);
+            if (count > 0) rewardDogeAmount += count * Number(item._initBalance) * Number(item._apy) / 100 * 1000;
          }
 
       })
@@ -259,6 +249,24 @@ function AccountBalance(props) {
                      <h3><span>Unclaimed reward</span></h3>
                   </div>
                </div>
+               <div className="row justify-content-center border-top">
+                  <div className="col-6 py-3 text-center">
+                     <button
+                        type="button"
+                        className={`withdraw-btn mx-auto py-3 px-5 ${active && "active"}`}
+                        {
+                           ...(
+                              active && {
+                                 "data-bs-target" : "#stakingModal",
+                                 "data-bs-toggle" : "modal"
+                              }
+                           )
+                        }
+                     >
+                     Stake
+                     </button>
+                  </div>
+               </div>
                <div className="row border-top">
                   <div className="col-6 py-3 text-center">
                      <button
@@ -309,7 +317,7 @@ function AccountBalance(props) {
                         </svg>
                      </button>
                      <div className="heading-text-popupm">
-                        <h5 className="my-3 text-center ">Bond Settings</h5>
+                        <h5 className="my-3 text-center ">Stake Settings</h5>
                         <form action="">
                            <div className="input-bal">
                               <div className="row">

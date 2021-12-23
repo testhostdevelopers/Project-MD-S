@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
@@ -40,6 +39,8 @@ contract Staking {
     uint public LoriaAPY = 2;
     uint public DogeElig = 15;
     uint public LoriaElig = 30;
+    uint public DogePenalty = 100;
+    uint public LoriaPenalty = 100;
     uint private day = 24 * 3600;
     uint public lastUpdateTime;
     uint public rewardPerTokenStored;
@@ -55,6 +56,7 @@ contract Staking {
         uint _period;
         uint _apy;
         uint _eligibility;
+        uint _penalty;
         uint _claimedBalance;
         uint256 _updated_at;
         uint256 _created_at;
@@ -92,13 +94,13 @@ contract Staking {
             uint lastIdx = _stakingList[msg.sender].length - 1;
             if (_stakingList[msg.sender][lastIdx]._stakedToken == _type) {
                 if (_stakingList[msg.sender][lastIdx]._stakedToken == 0) {
-                    if (_stakingList[msg.sender][lastIdx]._apy != LoriaAPY || _stakingList[msg.sender][lastIdx]._eligibility == LoriaElig) {
+                    if (_stakingList[msg.sender][lastIdx]._apy != LoriaAPY || _stakingList[msg.sender][lastIdx]._eligibility != LoriaElig || _stakingList[msg.sender][lastIdx]._penalty != LoriaPenalty) {
                         flag = true;
                     }
                 }
                 
                 else {
-                    if (_stakingList[msg.sender][lastIdx]._apy != DogeAPY || _stakingList[msg.sender][lastIdx]._eligibility == DogeElig) {
+                    if (_stakingList[msg.sender][lastIdx]._apy != DogeAPY || _stakingList[msg.sender][lastIdx]._eligibility != DogeElig || _stakingList[msg.sender][lastIdx]._penalty != LoriaPenalty) {
                         flag = true;
                     }
                 }
@@ -110,7 +112,6 @@ contract Staking {
                     _stakingList[msg.sender][lastIdx]._isRewarded = false;
                 }
             }
-
             else flag = true;
         }
         else flag = true;
@@ -118,6 +119,7 @@ contract Staking {
         if (flag) {
             uint _elig = _type == 0 ? LoriaElig : DogeElig;
             uint _apy = _type == 0 ? LoriaAPY : DogeAPY;
+            uint _penalty = _type == 0 ? DogePenalty : LoriaPenalty;
 
             StakingItem memory item = StakingItem({
                 _stakedToken: _type,
@@ -127,6 +129,7 @@ contract Staking {
                 _period: _period,
                 _eligibility: _elig,
                 _apy: _apy,
+                _penalty: _penalty,
                 _claimedBalance: 0,
                 _isRewarded: false
             });
@@ -146,15 +149,19 @@ contract Staking {
         uint _dogeReward = 0;
         uint _loriaReward = 0;
         for (uint i = 0; i < item.length; i ++) {
-            if (timestamp - item[i]._created_at >= item[i]._eligibility * 1 days) {
+            if (timestamp - item[i]._created_at >= 0) {
                 if (item[i]._stakedToken == 0) {
-                    _dogeStaked += item[i]._initBalance;
+                    if (block.timestamp - item[i]._created_at >= 0) {
+                        _dogeStaked += item[i]._initBalance;
+                    }
                     _dogeReward += item[i]._initBalance;
                 }
                 
                 else {
-                    _loriaReward += _stakingList[msg.sender][i]._initBalance;
-                    _loriaStaked += item[i]._initBalance;
+                    if (block.timestamp - item[i]._created_at >= 0) {
+                        _loriaStaked += item[i]._initBalance;
+                    }
+                    _loriaReward += item[i]._initBalance;
                 }
             }
         }
@@ -167,39 +174,55 @@ contract Staking {
         delete _stakingList[msg.sender];
     }
     
-    function withdraw(uint idx) external {
-        if (_stakingList[msg.sender][idx]._stakedToken == 0) {
-            IERC20(dogeReward).transferFrom(msg.sender, address(this), _stakingList[msg.sender][idx]._initBalance);
-            if (block.timestamp - _stakingList[msg.sender][idx]._created_at >= _stakingList[msg.sender][idx]._eligibility * 1 days) {
-                IERC20(dogeStaking).transfer(msg.sender, _stakingList[msg.sender][idx]._initBalance);
+    function withdraw(uint idx) public {
+        StakingItem memory item = _stakingList[msg.sender][idx];
+        if (item._stakedToken == 0) {
+            IERC20(dogeReward).transferFrom(msg.sender, address(this), item._initBalance);
+            if (block.timestamp - item._created_at >= 0) {
+                IERC20(dogeStaking).transfer(msg.sender, item._initBalance);
+            }
+
+            else if (100 - item._penalty > 0) {
+                IERC20(dogeStaking).transfer(msg.sender, item._initBalance * (100 - item._penalty) / 100);
             }
         }
         else {
-            IERC20(loriaReward).transferFrom(msg.sender, address(this), _stakingList[msg.sender][idx]._initBalance);
-            if (block.timestamp - _stakingList[msg.sender][idx]._created_at >= _stakingList[msg.sender][idx]._eligibility * 1 days) {
-                IERC20(loriaStaking).transfer(msg.sender, _stakingList[msg.sender][idx]._initBalance);
+            IERC20(loriaReward).transferFrom(msg.sender, address(this), item._initBalance);
+            if (block.timestamp - item._created_at >= 0) {
+                IERC20(loriaStaking).transfer(msg.sender, item._initBalance);
+            }
+
+            else if (100 - item._penalty > 0) {
+                IERC20(loriaStaking).transfer(msg.sender, item._initBalance * (100 - item._penalty) / 100);
             }
         }
         delete _stakingList[msg.sender][idx];
     }
 
     function claim(uint idx) public {
+        StakingItem memory item = _stakingList[msg.sender][idx];
         uint timestamp = block.timestamp;
-        uint diff = timestamp - _stakingList[msg.sender][idx]._updated_at;
-        
-        if ( diff >= _stakingList[msg.sender][idx]._eligibility * 1 days) {
-            uint count = (diff / _stakingList[msg.sender][idx]._eligibility / day);
-            uint _rewards = _stakingList[msg.sender][idx]._initBalance * _stakingList[msg.sender][idx]._apy / 100 * count;
-            if (_stakingList[msg.sender][idx]._stakedToken == 0) {
+        uint diff = timestamp -item._updated_at;
+        uint created = timestamp -item._created_at;
+
+        if ( diff >= 0 && created < item._period * 30 * 1 days) {
+            // uint count = (diff /item._eligibility / day);
+            uint count = 1;
+            uint _rewards =item._initBalance *item._apy / 100 * count;
+            if (item._stakedToken == 0) {
                 _rewards /= 1000;
                 IERC20(loriaStaking).transfer(msg.sender, _rewards);
             }
             else {
                 _rewards *= 1000;
-                IERC20(loriaStaking).transfer(msg.sender, _rewards);
+                IERC20(dogeStaking).transfer(msg.sender, _rewards);
             }
             _stakingList[msg.sender][idx]._updated_at = timestamp;
             _stakingList[msg.sender][idx]._claimedBalance += _rewards;
+        }
+
+        else if (created >= item._period * 30 * 1 days) {
+            withdraw(idx);
         }
 
     }
@@ -235,24 +258,18 @@ contract Staking {
         LoriaElig = _day;
     }
 
+    function setDogePenalty(uint penalty) external onlyOwner{
+        require(penalty <= 100, "Penalty must be lesser than 100.");
+        DogePenalty = penalty;
+    }
+
+    function setLoriaPenalty(uint penalty) external onlyOwner {
+        require(penalty <= 100, "Penalty must be lesser than 100.");
+        LoriaPenalty = penalty;
+    }
+
     function getStakedList() external view returns(StakingItem[] memory list) {
         return _stakingList[msg.sender];
-    }
-
-    function getDogeAPY() external view returns(uint reward) {
-        return DogeAPY;
-    }
-
-    function getDogeElig() external view returns(uint) {
-        return DogeElig;
-    }
-
-    function getLoriaAPY() external view returns(uint reward) {
-        return LoriaAPY;
-    }
-
-    function getLoriaElig() external view returns(uint) {
-        return LoriaElig;
     }
 
     function getNow() external view returns(uint) {
