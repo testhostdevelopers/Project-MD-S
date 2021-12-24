@@ -177,12 +177,14 @@ function Coin(props) {
                                 stakeBalance === "stake" ?
                                     <ListOfStakes
                                         web3={_web3}
-                                        stake={_Stake}
+                                        dogeCoin={_DogeCoin}
+                                        loriaCoin={_LoriaCoin}
+                                        dogeReward={_DogeReward}
+                                        loriaReward={_LoriaReward}
                                         dogeB={_dogeBalance}
                                         loriaB={_loriaBalance}
-                                        loriaCoin={_LoriaCoin}
-                                        coin={_DogeCoin}
-                                        reward={_DogeReward}
+                                        ethB={_ethBalance}
+                                        stake={_Stake}
                                     />
                                     :
                                     stakeBalance === "bonding"

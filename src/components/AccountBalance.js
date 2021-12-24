@@ -130,35 +130,39 @@ function AccountBalance(props) {
       }
       setLoading(true);
       try {
+         let amount = 0;
+         let balance, rewardB;
          switch(activeCoin) {
             case 0:
-               const dogeAmount = web3.utils.toWei(_stakingAmount.toString(), "gwei");
-               await _MSDOGE.methods.approve(StakingAddress, dogeAmount).send({ from: account });
+               amount = web3.utils.toWei(_stakingAmount.toString(), "gwei");
+               balance = await _MSDOGE.methods.balanceOf(account).call();
+               rewardB = await _XMSDOGE.methods.balanceOf(StakingAddress).call();
+               if (Number(balance) < Number(amount)) throw "Not enough balance";
+               else if (Number(rewardB) < Number(amount)) throw "Not enough reward balance";
+               await _MSDOGE.methods.approve(StakingAddress, amount).send({ from: account });
                NotificationManager.info("Approved", "Info");
-               await _Staking.methods.stake(activeCoin, dogeAmount, counter).send({ from: account })
-               .on('receipt', async(receipt) => {
-                  NotificationManager.success("Success", ":)");
-                  await props.updateStatus();
-                  await getStakedList();
-                  setLoading(false);
-               })
                break;
             case 1:
-               const loriaAmount = web3.utils.toWei(_stakingAmount.toString(), "mwei");
-               await _CRYPTO.methods.approve(StakingAddress, loriaAmount).send({ from: account });
+               amount = web3.utils.toWei(_stakingAmount.toString(), "mwei");
+               balance = await _CRYPTO.methods.balanceOf(account).call();
+               rewardB = await _XCRYPTO.methods.balanceOf(StakingAddress).call();
+               if (Number(balance) < Number(amount)) throw "Not enough balance";
+               else if (Number(rewardB) < Number(amount)) throw "Not enough reward balance";
+               await _CRYPTO.methods.approve(StakingAddress, amount).send({ from: account });
                NotificationManager.info("Approved", "Info");
-               await _Staking.methods.stake(activeCoin, loriaAmount, counter).send({ from: account })
-               .on('receipt', async(receipt) => {
-                  NotificationManager.success("Success", ":)");
-                  await props.updateStatus();
-                  await getStakedList();
-                  setLoading(false);
-               })
                break;
          }
+         await _Staking.methods.stake(activeCoin, amount, counter).send({ from: account })
+         .on('receipt', async(receipt) => {
+            NotificationManager.success("Success", ":)");
+            await props.updateStatus();
+            await getStakedList();
+         })
       } catch(err) {
-         setLoading(false);
+         if (typeof err == "string") NotificationManager.error(err);
+         else NotificationManager.error("Failed");
       }
+      setLoading(false);
       window.$("#stakingModal").modal('hide');
    }
 
@@ -174,8 +178,8 @@ function AccountBalance(props) {
       list.map(item => {
          const updated_at = item._updated_at;
 
-         // let count = Math.floor((now - updated_at) / (duration * item._dogeEli));
-         let count = 1;
+         let count = Math.floor((now - updated_at) / (duration * item._dogeEli));
+         // let count = 1;
 
          if (item._stakedToken == 0) {
             stakedDogeAmount += Number(item._initBalance);
@@ -264,7 +268,7 @@ function AccountBalance(props) {
                         {
                            ...(
                               active && {
-                                 "data-bs-target" : "#cancelStake",
+                                 "data-bs-target" : "#cancelAllStake",
                                  "data-bs-toggle" : "modal"
                               }
                            )
@@ -405,7 +409,7 @@ function AccountBalance(props) {
 
          {/* Modal */}
 
-         <div className="modal fade" id="cancelStake" tabIndex="-1" aria-labelledby="cancelStake" aria-hidden="true">
+         <div className="modal fade" id="cancelAllStake" tabIndex="-1" aria-labelledby="cancelAllStake" aria-hidden="true">
             <div className="modal-dialog">
                <div className="modal-content">
                   <div className="modal-body popup-card-container rel">

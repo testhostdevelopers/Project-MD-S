@@ -20,9 +20,10 @@ function ListOfStakes(props) {
    const {
       web3,
       stake: _Staking,
-      coin: _MSDOGE,
-      reward: _XMSDOGE, 
-      loriaCoin: _CRYPTOCOIN,
+      dogeCoin,
+      dogeReward,
+      loriaReward, 
+      loriaCoin,
    } = props;
 
    const [_stakedList, setStakedList] = useState([]);
@@ -57,14 +58,32 @@ function ListOfStakes(props) {
       setStakedList(list);
       setClaimNow(now);
    }
-
-   
    
    const Claim = async() => {
       setLoading(true);
-      await _Staking.methods.claim(activeIdx).send({ from: account });
-      NotificationManager.success('Claimed Success', ':O');
+      try {
+         await _Staking.methods.claim(activeIdx).send({ from: account });
+         NotificationManager.success('Claimed Success', ':O');
+      } catch(err) {
+         NotificationManager.error("Claimed Failed",":S");
+      }
       window.$('#claimCoinPopup').modal('hide');
+      setLoading(false);
+   }
+
+   const withdraw = async() => {
+      const { _initBalance, _stakedToken } = _stakedList[activeIdx];
+      setLoading(true);
+      try {
+         if (_stakedToken == "1") await loriaReward.methods.approve(StakingAddress, _initBalance).send({ from : account });
+         else await dogeReward.methods.approve(StakingAddress, _initBalance).send({ from : account });
+         await _Staking.methods.withdraw(activeIdx).send({ from: account });
+         NotificationManager.success("Withdraw Success", ":)");
+      } catch(err) {
+         console.log(err);
+         NotificationManager.error("Withdraw Failed",":S");
+      }
+      window.$('#cancelStake').modal('hide');
       setLoading(false);
    }
 
@@ -124,8 +143,8 @@ function ListOfStakes(props) {
                               const updatedAt = Number(item._updated_at);
                               const duration = 24 * 25 * 3600;
                               const elig = item._stakedToken == 1 ? item._dogeEli : item._loriaEli;
-                              // const claimable = _claimNow - updatedAt >= elig * duration ? true : false;
-                              const claimable = _claimNow - updatedAt >= 0 ? true : false;
+                              const claimable = _claimNow - updatedAt >= elig * duration ? true : false;
+                              // const claimable = _claimNow - updatedAt >= 0 ? true : false;
 
                               return (
                                  <tr className="m-0 mt-1" key={idx}>
@@ -211,6 +230,7 @@ function ListOfStakes(props) {
                                                 }
                                              )
                                           }
+                                          onClick={( claimable ? () => setActiveIdx(idx) : () => null )}
                                        >
                                           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
@@ -581,7 +601,46 @@ function ListOfStakes(props) {
                </div>
             </div>
          </div>
+         
+         {/* Modal */}
 
+         <div className="modal fade" id="cancelStake" tabIndex="-1" aria-labelledby="cancelStake" aria-hidden="true">
+            <div className="modal-dialog">
+               <div className="modal-content">
+                  <div className="modal-body popup-card-container rel">
+                     <button type="button" className="closebtn" data-bs-dismiss="modal" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                        </svg>
+                     </button>
+                     <div className="heading-text-popupm">
+                        <h5 className="my-3 text-center ">Stake Settings</h5>
+                        <form action="">
+                           <div className="input-bal">
+                              <div className="row">
+
+                                 <div className="mb-4 col-sm-12 d-flex justify-content-between">
+                                    <div><small>Pool Stake: </small></div>
+                                    <div><small><b>{activeIdx != -1 && web3.utils.fromWei(_stakedList[activeIdx]._initBalance, _stakedList[activeIdx]._stakedToken == "0" ? "gwei" : "mwei")}</b> {activeIdx != -1 && _stakedList[activeIdx]._stakedToken == "0" ? "MSDOGE" : "CRYPTO"}</small></div>
+                                 </div>
+
+                                 <div className="col-sm-12">
+                                    <div className="p-2 stake-btn">
+                                       <button
+                                          type="button"
+                                          className="table-btn color5 py-2 px-4 w-100 mb-3 text-white"
+                                          onClick={withdraw}
+                                       >Cancel Stake</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </React.Fragment>
    )
 }
