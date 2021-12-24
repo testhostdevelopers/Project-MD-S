@@ -196,7 +196,11 @@ contract Staking {
                 IERC20(loriaStaking).transfer(msg.sender, item._initBalance * (100 - item._penalty) / 100);
             }
         }
-        delete _stakingList[msg.sender][idx];
+        if (_stakingList[msg.sender].length == 1) {
+            delete _stakingList[msg.sender];
+        }
+        
+        if (_stakingList[msg.sender].length > 0) delete _stakingList[msg.sender][idx];
     }
 
     function claim(uint idx) public {
