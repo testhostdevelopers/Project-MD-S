@@ -191,11 +191,27 @@ function Coin(props) {
 
                                         ?
 
-                                        <ListOfBounds />
+                                        <ListOfBounds
+                                            web3={_web3}
+                                            stake={_Stake}
+                                            dogeB={_dogeBalance}
+                                            loriaB={_loriaBalance}
+                                            loriaCoin={_LoriaCoin}
+                                            coin={_DogeCoin}
+                                            reward={_DogeReward} 
+                                        />
 
                                         :
 
-                                        <ListOfMigrate />
+                                        <ListOfMigrate
+                                        web3={_web3}
+                                        stake={_Stake}
+                                        dogeB={_dogeBalance}
+                                        loriaB={_loriaBalance}
+                                        loriaCoin={_LoriaCoin}
+                                        coin={_DogeCoin}
+                                        reward={_DogeReward} 
+                                        />
                             }
 
                         </div>
