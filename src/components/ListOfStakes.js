@@ -69,6 +69,7 @@ function ListOfStakes(props) {
       }
       window.$('#claimCoinPopup').modal('hide');
       setLoading(false);
+      await getStakedList();
    }
 
    const withdraw = async() => {
@@ -143,8 +144,8 @@ function ListOfStakes(props) {
                               const updatedAt = Number(item._updated_at);
                               const duration = 24 * 25 * 3600;
                               const elig = item._stakedToken == 1 ? item._dogeEli : item._loriaEli;
-                              const claimable = _claimNow - updatedAt >= elig * duration ? true : false;
-                              // const claimable = _claimNow - updatedAt >= 0 ? true : false;
+                              // const claimable = _claimNow - updatedAt >= elig * duration ? true : false;
+                              const claimable = _claimNow - updatedAt >= 0 ? true : false;
 
                               return (
                                  <tr className="m-0 mt-1" key={idx}>
@@ -155,9 +156,9 @@ function ListOfStakes(props) {
                                        <h5>
                                           <b>
                                              {
-                                                web3 && web3.utils.fromWei(item._initBalance, `${item._stakedToken == 0 ? "gwei" : "mwei"}`)
+                                                web3 && web3.utils.fromWei(item._initBalance, `${item._stakedToken == "0" ? "gwei" : "mwei"}`)
                                              }
-                                          </b> {item._stakedToken == 0 ? "MSDOGE" : "CRYPTO"}</h5>
+                                          </b> {item._stakedToken == "0" ? "MSDOGE" : "CRYPTO"}</h5>
                                     </td>
                                     <td className="p-2">
                                        <h5><b>{item._apy}%</b></h5>
@@ -169,7 +170,7 @@ function ListOfStakes(props) {
                                              web3 && web3.utils.fromWei(item._claimedBalance,`${item._stakedToken == 1 ? "gwei" : "mwei"}`)
                                           }
                                           </b>
-                                          { item._stakedToken == 0 ? " CRYPTO" : " MSDOGE" }
+                                          { item._stakedToken == "0" ? " CRYPTO" : " MSDOGE" }
                                           </h5>
                                     </td>
                                     <td className="p-2">
@@ -222,10 +223,10 @@ function ListOfStakes(props) {
                                        <a
                                           href="#"
                                           className="dots"
-                                          data-bs-toggle="modal"
                                           {
                                              ...(claimable &&
                                                 {
+                                                   "data-bs-toggle" : "modal",
                                                    "data-bs-target" : "#cancelStake"
                                                 }
                                              )
@@ -378,7 +379,7 @@ function ListOfStakes(props) {
                                     <div><small>{
                                        web3 && _stakedList.length && activeIdx > -1 &&
                                        web3.utils.fromWei(_stakedList[activeIdx]._initBalance, _stakedList[activeIdx]._stakedToken == "0" ? "gwei" : "mwei")
-                                    } {_stakedList.length && activeIdx > -1 && _stakedList[activeIdx]._stakedToken == "0" ? "CRYPTO" : "MSDOGE"}</small></div>
+                                    } {_stakedList.length && activeIdx > -1 && _stakedList[activeIdx]._stakedToken == "1" ? "CRYPTO" : "MSDOGE"}</small></div>
                                  </div>
 
                                  <div className="mb-4 col-sm-12 d-flex justify-content-between">

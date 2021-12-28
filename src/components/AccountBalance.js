@@ -189,8 +189,8 @@ function AccountBalance(props) {
       list.map(item => {
          const updated_at = item._updated_at;
 
-         let count = Math.floor((now - updated_at) / (duration * item._dogeEli));
-         // let count = 1;
+         // let count = Math.floor((now - updated_at) / (duration * item._dogeEli));
+         let count = 1;
 
          if (item._stakedToken == 0) {
             stakedDogeAmount += Number(item._initBalance);
@@ -253,7 +253,7 @@ function AccountBalance(props) {
                      <h3><span>Unclaimed reward</span></h3>
                   </div>
                </div>
-               {/* <div className="row justify-content-center border-top">
+               <div className="row justify-content-center border-top">
                   <div className="col-6 py-3 text-center">
                      <button
                         type="button"
@@ -270,7 +270,7 @@ function AccountBalance(props) {
                      Stake
                      </button>
                   </div>
-               </div> */}
+               </div>
                <div className="row border-top">
                   <div className="col-6 py-3 text-center">
                      <button
@@ -294,12 +294,12 @@ function AccountBalance(props) {
                         className="withdraw-btn mx-auto py-3 px-5"
                         data-bs-toggle="modal" data-bs-target="#stakeCryptoModal"
                         {
-                        ...(
-                           active && {
-                              "data-bs-target": "#multiClaimCoinPopup",
-                              "data-bs-toggle": "modal"
-                           }
-                        )
+                           ...(
+                              active && {
+                                 "data-bs-target": "#multiClaimCoinPopup",
+                                 "data-bs-toggle": "modal"
+                              }
+                           )
                         }
                      >
                         Claim
@@ -309,6 +309,117 @@ function AccountBalance(props) {
             </div>
          </div>
 
+         {/* Modal */}
+         <div className="modal fade" id="stakingModal" tabIndex="-1" aria-labelledby="stakingModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+               <div className="modal-content icon-text-block-cri">
+                  <div className="modal-body popup-card-container rel">
+                     <button type="button" className="closebtn" data-bs-dismiss="modal" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                        </svg>
+                     </button>
+                     <div className="heading-text-popupm">
+                        <h5 className="my-3 text-center ">Transactions</h5>
+                        <div action="">
+                           <div className="input-bal">
+                              <div className="inner-bore p-3">
+                                 <div className="row">
+                                    <div className="col-6">
+                                       <h4 className="mb-3">Input</h4>
+                                       <input
+                                          type="number"
+                                          className="input-box"
+                                          placeholder="0.5"
+                                          onChange={(e) => setStakingAmount(e.target.value)}
+                                       />
+                                    </div>
+                                    <div className="col-6 text-end">
+                                       <h4 className="mb-3">Balance: {dogeB} MSDOGE</h4>
+                                       <div className="small-logo-photo d-flex justify-content-end ">
+                                          <Dropdown
+                                             name="location"
+                                             title="Select location"
+                                             list={locations}
+                                             onChange={(res) => setCoin(res.value)}
+                                             styles={{
+                                                wrapper : {
+                                                   width: '130px'
+                                                },
+                                                header: {
+                                                   borderRadius: '25px',
+                                                   backgroundColor: 'transparent'
+                                                },
+                                                headerTitle: {
+                                                   fontSize: '15px',
+                                                   fontWeight: 'bold',
+                                                   alignItems: 'center'
+                                                },
+                                                scrollList: {
+                                                   padding: '10px',
+                                                },
+                                                listItem: {
+                                                   fontSize: '15px',
+                                                   fontWeight: 'initial',
+                                                   padding: '0',
+                                                   overflow: 'initial',
+                                                   borderTop: '1px solid #eee'
+                                                }
+                                             }}
+                                             select={{value: activeCoin}}
+                                          />
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div className="row my-3">
+                                 <div className="col-md-5">
+                                    <div className="d-flex align-items-center sel-number-box">
+                                       <div className="number me-3 d-flex justify-content-between">
+                                          <span className="minus" onClick={(counter > 1 ? () => setCounter(counter - 1) : () => null)}>
+                                             <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.75 0.25H11.25V1.75H0.75V0.25Z" fill="#161F2F" />
+                                             </svg>
+                                          </span>
+                                          <input type="text" value={counter} readOnly/>
+                                          <span className="plus" onClick={() => counter < 84 && setCounter(counter + 1)}>
+                                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.25 5.25V0.75H6.75V5.25H11.25V6.75H6.75V11.25H5.25V6.75H0.75V5.25H5.25Z" fill="#161F2F" />
+                                             </svg>
+                                          </span>
+                                       </div>
+                                       <p>Months</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div className="row">
+                                 <div className="col-12">
+                                    <div className="d-flex mb-5 qu-text">
+                                       <div className="icon-box me-2 d-flex">
+                                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path fillRule="evenodd" clipRule="evenodd" d="M1.5 9C1.5 13.1423 4.85775 16.5 9 16.5C13.1423 16.5 16.5 13.1423 16.5 9C16.5 4.85775 13.1423 1.5 9 1.5C4.85775 1.5 1.5 4.85775 1.5 9ZM15 9C15 12.3137 12.3137 15 9 15C5.68629 15 3 12.3137 3 9C3 5.68629 5.68629 3 9 3C12.3137 3 15 5.68629 15 9ZM9.75 11.25V12.75H8.25V11.25H9.75ZM9.75029 10.5V10.0162C10.983 9.64878 11.7681 8.44242 11.6048 7.16651C11.4415 5.8906 10.3779 4.92085 9.09237 4.87572C7.80685 4.83059 6.6779 5.72339 6.42554 6.9847L7.89704 7.27945C8.01319 6.69834 8.56023 6.30696 9.14773 6.38467C9.73522 6.46237 10.1617 6.9825 10.1228 7.57383C10.0839 8.16517 9.5929 8.62492 9.00029 8.62495C8.58607 8.62495 8.25029 8.96074 8.25029 9.37495V10.5H9.75029Z" fill="#171717" />
+                                          </svg>
+                                       </div>
+                                       You can stake from 1 month to 7 years.
+                                    </div>
+                                    <div className="apy-box rel px-3 py-4 text-center">
+                                       <h4 className="green-box">0.5% APY</h4>
+                                       <p>The APY is calculated by multiplying the amount of months staked with 0.5. Maximum of 20% APY. Please note that cancelling the stake early will penalize you. Refer to our documentation: <a href="#" className="click-btn">Click Here</a> </p>
+                                    </div>
+                                    <button
+                                       className="mt-3 approve-btn text-white text-center py-4 w-100"
+                                       onClick={Staking}
+                                    >Approve</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
          {/* Modal */}
 
          <div className="modal fade" id="cancelAllStake" tabIndex="-1" aria-labelledby="cancelAllStake" aria-hidden="true">
