@@ -84,7 +84,7 @@ header,.form-field .dropdown-body, .line-graph,.popup-card-container, .navbar-ex
   .navbar-expand-lg .navbar-nav .has-submenu::after {
     border-top-color: ${props => props.theme.backgroundColor};
   }
-  .form-field .dropdown .dropdown-header, tbody tr td, .line-graph-gutter, .line-graph-a{
+  .form-field .dropdown .dropdown-header, tbody tr td, .line-graph-gutter, .line-graph-a, .table-btn{
     color: ${props => props.theme.text};
   }
   .form-field .dropdown-body .dropdown-item:hover,

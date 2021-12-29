@@ -994,7 +994,7 @@ header .navbar {
   font-family: var(--amitSemi);
   width: 150px;
   height: 48px;
-  padding: 15px 40px 11px 40px;
+  padding: 15px 40px;
   border-radius: 6px;
   display: flex;
     justify-content: center;
@@ -1017,7 +1017,9 @@ header .navbar {
   font-size: 14px;
   color: var(--black);
   font-family: var(--amitSemi);
-  padding: 15px 40px 11px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 6px;
 }
 
@@ -1212,12 +1214,12 @@ select::-ms-expand {
 .table-btn {
 	background: #cdcdcd;
 	border: none;
-	color: var(--white);
+	color: var(--black);
 	font-family: var(--amitSemi);
     font-size: 14px;
     width: 104px;
     height: 48px;
-    padding: 15px 40px 11px 40px;
+    padding: 15px 40px;
     border-radius: 6px;
 }
 
@@ -2139,6 +2141,15 @@ div.acc-heading-text h2 > span {
 }
 
 @media only screen and (max-width: 768px){
+
+  .stake-bonds-outline-container .btn{
+    margin: 0 !important;
+  }
+
+  .msDogeStaking-container, .stake-bonds-outline-container{
+    justify-content: space-between !important;
+  }
+
   .line-graph-a{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
   margin-bottom: 20px;
