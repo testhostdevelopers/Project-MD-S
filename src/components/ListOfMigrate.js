@@ -225,35 +225,19 @@ function ListOfMigrate(props) {
                   </table>
                   <ul className="stake-list-sel fliter-box d-flex flex-wrap my-4 ls p-0 d-block d-md-none">
                      <li className="col mb-3 mb-md-0 me-3">
-                        <select>
-                           <option>Start date</option>
-                           <option>Start date</option>
-                           <option>Start date</option>
-                        </select>
+                        <small><b>Start date</b></small>
                         <h5 className="mt-3"><b>09/10/2021</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Amount of stake</option>
-                           <option>Amount of stake</option>
-                           <option>Amount of stake</option>
-                        </select>
+                        <small><b>Amount of stake</b></small>
                         <h5 className="mt-3"><b>1.0 </b> MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>APY</option>
-                           <option>APY</option>
-                           <option>APY</option>
-                        </select>
+                        <small><b>APY</b></small>
                         <h5 className="mt-3"><b>0.5%</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Amount of reward</option>
-                           <option>Amount of reward</option>
-                           <option>Amount of reward</option>
-                        </select>
+                        <small><b>Amount of reward</b></small>
                         <h5 className="mt-3">MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
@@ -262,6 +246,7 @@ function ListOfMigrate(props) {
                            <option>Remaining time</option>
                            <option>Remaining time</option>
                         </select>
+                        <small><b>Remaining time</b></small>
                         <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
                      </li>
                      <li>

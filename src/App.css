@@ -1866,6 +1866,13 @@ div.acc-heading-text h2 > span {
   cursor: pointer;
 }
 
+.stake-list-sel select{
+  background: none !important;
+}
+
+.fa-sort-down:before{
+  content: '' !important;
+}
 
 .admin-dashboard-bg{
   padding: 100px 0;
@@ -2127,10 +2134,7 @@ div.acc-heading-text h2 > span {
 }
 
 .line-graph-gutter{
-  background-color: #fff;
   border-radius: 12px;
-  padding: 40px 30px;
-  margin-bottom: 40px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
 }
 
@@ -2195,4 +2199,14 @@ div.acc-heading-text h2 > span {
 
 .stake-bonds-outline-container .btn{
   margin: 0 0 0 21px;
+}
+
+.modal .modal-content{
+  width: 340px;
+}
+
+@media only screen and (max-width: 768px){
+  .modal .modal-content{
+    width: 100% !important;
+  }
 }

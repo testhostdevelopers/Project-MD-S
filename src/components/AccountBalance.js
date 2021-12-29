@@ -220,6 +220,7 @@ function AccountBalance(props) {
                      <div className="col-6 py-3 text-center">
                         <button
                            type="button"
+                           data-bs-toggle="modal" data-bs-target="#stakeCryptoModal"
                            className={`withdraw-btn mx-auto py-3 px-5 ${active && "active"}`}
                            {
                               ...(
@@ -234,7 +235,7 @@ function AccountBalance(props) {
                         </button>
                      </div>
                   </div>
-                  <div className="col-6 py-3 text-center">
+                  {/* <div className="col-6 py-3 text-center">
                      <button
                         type="button"
                         className="withdraw-btn mx-auto py-3 px-5"
@@ -250,7 +251,7 @@ function AccountBalance(props) {
                      >
                         Claim
                      </button>
-                  </div>
+                  </div> */}
                </div>
             </div>
          </div>

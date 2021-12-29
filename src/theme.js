@@ -61,7 +61,7 @@ body, .coin-main, .line-graph-gutter{
     color: ${props => props.theme.text};
     fill: ${props => props.theme.text};
   }
-  div.navbar-collapse, header,.form-field .dropdown-body, .line-graph,.popup-card-container, .navbar-expand-lg .navbar-nav .nav-item .sub-menu, .text-person, .icon-text-block-cri, .step-tabs-box nav .nav-tabs .nav-link.active, .aud-white-box, .review-box, .s-inline-box, .s-icon-box, .moon-icon, .accordion-button.collapsed{
+header,.form-field .dropdown-body, .line-graph,.popup-card-container, .navbar-expand-lg .navbar-nav .nav-item .sub-menu, .text-person, .icon-text-block-cri, .step-tabs-box nav .nav-tabs .nav-link.active, .aud-white-box, .review-box, .s-inline-box, .s-icon-box, .moon-icon, .accordion-button.collapsed{
     background-color: ${props => props.theme.backgroundColor};
     border-color: ${props => props.theme.backgroundColor};
   }
