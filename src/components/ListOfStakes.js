@@ -81,11 +81,12 @@ function ListOfStakes(props) {
          await _Staking.methods.withdraw(activeIdx).send({ from: account });
          NotificationManager.success("Withdraw Success", ":)");
       } catch(err) {
-         console.log(err);
          NotificationManager.error("Withdraw Failed",":S");
       }
       window.$('#cancelStake').modal('hide');
+      setActiveIdx(-1);
       setLoading(false);
+      await getStakedList();
    }
 
    return (
