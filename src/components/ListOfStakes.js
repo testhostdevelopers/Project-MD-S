@@ -449,7 +449,7 @@ function ListOfStakes(props) {
                                           </div>
                                        </div>
                                        <div className="p-2 stake-btn">
-                                          <a type="button" className="table-btn btn py-2 px-4 w-100 mb-3" data-bs-toggle="modal" data-bs-target="#hadesPopup">Approve 0.5 URUS</a>
+                                          <a type="button" className="table-btn btn py-2 px-4 w-100 mb-1" data-bs-toggle="modal" data-bs-target="#hadesPopup">Approve 0.5 URUS</a>
                                        </div>
                                     </div>
                                  </div>
@@ -489,14 +489,9 @@ function ListOfStakes(props) {
                                           <div><small>5 days</small></div>
                                        </div>
                                        <div className="col-sm-12">
-                                          <div className="mt-3 mb-3">
-                                             <div className="w-100 text-center">
-                                                <h6>First time bonding MsDoge?Please approve olympus dao to use your MsDoge for bonding.</h6>
-                                             </div>
-                                          </div>
                                           <div className="p-2 stake-btn">
                                              <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim</button>
-                                             <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim & Autostake</button>
+                                             <button type="button" className="table-btn btn px-4 w-100">Claim & Autostake</button>
                                           </div>
                                        </div>
                                     </div>

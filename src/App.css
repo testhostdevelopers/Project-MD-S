@@ -1330,9 +1330,12 @@ table.stake-list-sel.fliter-box td:last-child {
 
 .modal.fade div.modal-dialog {
 	max-width: 340px;
-	top: 50%;
-	transform: translateY(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    position: absolute;
 }
+
 .heading-text-popupm h5 {
 	margin-top: 9px !important;
 	font-family: var(--amitSemi);
@@ -2028,19 +2031,36 @@ div.acc-heading-text h2 > span {
   color: #F6CE0E;
 }
 
+#msDogeApprove b.text-gold{
+  font-size: 20px !important;
+}
+
+#msDogeApprove h6{
+  font-size: 16px !important;
+}
+
 .boundTabs_container{
-  padding: 10px;
+  padding: 8px;
   border: solid 1px #CDCDCD !important;
-  border-radius: 12px;
+  border-radius: 5px;
   width: 100%;
+  height: 53px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .boundTabs_container button{
-  width: 50%;
-  border-radius: 12px;
+  border-radius: 5px;
   background: #fff;
   padding: 10px;
   border: none;
+  width: 127px;
+  height: 36px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  box-sizing: border-box;
 }
 
 
@@ -2141,6 +2161,14 @@ div.acc-heading-text h2 > span {
 }
 
 @media only screen and (max-width: 768px){
+
+  .modal-dialog{
+    margin: auto !important;
+  }
+
+  .modal.fade div.modal-dialog{
+    width: 340px !important;
+  }
 
   .stake-bonds-outline-container .btn{
     margin: 0 !important;
