@@ -31,11 +31,12 @@ export default function ListOfBounds() {
                            <i className="fas fa-sort-down ml-2"></i>
                         </td>
                         <td className="p-2">
-                           <select onChange={(e) => setDataPrice(e.target.value)}>
+                           {/* <select onChange={(e) => setDataPrice(e.target.value)}>
                               <option selected>Pending Rewards</option>
                               <option value="1">High to low</option>
                               <option value="2">Low to hight</option>
-                           </select>
+                           </select> */}
+                            <small><b>Pending Rewards</b></small>
                         </td>
                         <td className="p-2">
                            <small><b>Claimable Rewards</b></small>
@@ -157,43 +158,23 @@ export default function ListOfBounds() {
                   </table>
                   <ul className="stake-list-sel fliter-box d-flex flex-wrap my-4 ls p-0 d-block d-md-none">
                      <li className="col mb-3 mb-md-0 me-3">
-                        <select>
-                           <option>Asset</option>
-                           <option>Asset</option>
-                           <option>Asset</option>
-                        </select>
+                     <small><b>Asset</b></small>
                         <h5 className="mt-3"><b>09/10/2021</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Balance</option>
-                           <option>Balance</option>
-                           <option>Balance</option>
-                        </select>
+                        <small><b>Balance</b></small>
                         <h5 className="mt-3"><b>1.0 </b> MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Price</option>
-                           <option>Price</option>
-                           <option>Price</option>
-                        </select>
+                        <small><b>Price</b></small>
                         <h5 className="mt-3"><b>0.5%</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>ROI</option>
-                           <option>ROI</option>
-                           <option>ROI</option>
-                        </select>
+                     <small><b>ROI</b></small>
                         <h5 className="mt-3">MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Purchased</option>
-                           <option>Purchased</option>
-                           <option>Purchased</option>
-                        </select>
+                        <small><b>Purchased</b></small>
                         <h5 className="mt-3"><b className="text-read">$3,462,530</b></h5>
                      </li>
                      <li>
@@ -395,43 +376,23 @@ export default function ListOfBounds() {
                   </table>
                   <ul className="stake-list-sel fliter-box d-flex flex-wrap my-4 ls p-0 d-block d-md-none">
                      <li className="col mb-3 mb-md-0 me-3">
-                        <select>
-                           <option>Asset</option>
-                           <option>Asset</option>
-                           <option>Asset</option>
-                        </select>
+                         <small><b>Asset</b></small>
                         <h5 className="mt-3"><b>09/10/2021</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Bond</option>
-                           <option>Bond</option>
-                           <option>Bond</option>
-                        </select>
+                         <small><b>Bond</b></small>
                         <h5 className="mt-3"><b>1.0 </b> MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Price</option>
-                           <option>Price</option>
-                           <option>Price</option>
-                        </select>
+                         <small><b>Price</b></small>
                         <h5 className="mt-3"><b>0.5%</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>ROI</option>
-                           <option>ROI</option>
-                           <option>ROI</option>
-                        </select>
+                         <small><b>ROI</b></small>
                         <h5 className="mt-3">MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Purchased</option>
-                           <option>Purchased</option>
-                           <option>Purchased</option>
-                        </select>
+                         <small><b>Purchased</b></small>
                         <h5 className="mt-3"><b className="text-read">$3,462,530</b></h5>
                      </li>
                      <li>
@@ -744,7 +705,7 @@ export default function ListOfBounds() {
                                           </p>
                                        </div>
                                        <div className="p-2 stake-btn">
-                                          <a type="button" className="table-btn btn w-100 mb-3">Approve 0.5 URUS</a>
+                                          <a type="button" className="table-btn btn w-100">Approve 0.5 URUS</a>
                                        </div>
                                     </div>
                                  </div>
@@ -786,14 +747,9 @@ export default function ListOfBounds() {
                                           <div><small>5 days</small></div>
                                        </div>
                                        <div className="col-sm-12">
-                                          <div className="mt-3 mb-3">
-                                             <p className="w-100 text-center">
-                                                <h6>First time bonding MsDoge?Please approve olympus dao to use your MsDoge for bonding.</h6>
-                                             </p>
-                                          </div>
                                           <div className="p-2 stake-btn">
                                              <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim</button>
-                                             <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim & Autostake</button>
+                                             <button type="button" className="table-btn btn px-4 w-100">Claim & Autostake</button>
                                           </div>
                                        </div>
                                     </div>

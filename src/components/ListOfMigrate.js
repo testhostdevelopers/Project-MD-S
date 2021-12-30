@@ -9,6 +9,9 @@ import coin from "../assets/images/icons/coin-base.jpg";
 import fortmatic from "../assets/images/icons/fortmatic-icon.svg";
 import wallet from "../assets/images/icons/wallet-icon.svg";
 import logo from '../assets/images/favicon.png';
+import edenSwap from '../assets/images/coin/edenSwap.png'
+import cryptoLogo from '../assets/images/cryptoLogo.png'
+import DOGE from '../assets/images/coin/dogecoin.png'
 import { connect } from 'react-redux';
 
 import config from "../config.json";
@@ -214,7 +217,7 @@ function ListOfMigrate(props) {
                            !_stakedList.length &&
                            <tr className="empty-row pt-3 pb-3 mt-1">
                               <td colSpan="7" className="justify-content-center w-100">
-                                  
+
                               </td>
                            </tr>
                         }
@@ -222,35 +225,19 @@ function ListOfMigrate(props) {
                   </table>
                   <ul className="stake-list-sel fliter-box d-flex flex-wrap my-4 ls p-0 d-block d-md-none">
                      <li className="col mb-3 mb-md-0 me-3">
-                        <select>
-                           <option>Start date</option>
-                           <option>Start date</option>
-                           <option>Start date</option>
-                        </select>
+                        <small><b>Start date</b></small>
                         <h5 className="mt-3"><b>09/10/2021</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Amount of stake</option>
-                           <option>Amount of stake</option>
-                           <option>Amount of stake</option>
-                        </select>
+                        <small><b>Amount of stake</b></small>
                         <h5 className="mt-3"><b>1.0 </b> MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>APY</option>
-                           <option>APY</option>
-                           <option>APY</option>
-                        </select>
+                        <small><b>APY</b></small>
                         <h5 className="mt-3"><b>0.5%</b></h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
-                        <select>
-                           <option>Amount of reward</option>
-                           <option>Amount of reward</option>
-                           <option>Amount of reward</option>
-                        </select>
+                        <small><b>Amount of reward</b></small>
                         <h5 className="mt-3">MsDoge</h5>
                      </li>
                      <li className="col mb-3 mb-md-0 me-3 text-center">
@@ -259,6 +246,7 @@ function ListOfMigrate(props) {
                            <option>Remaining time</option>
                            <option>Remaining time</option>
                         </select>
+                        <small><b>Remaining time</b></small>
                         <h5><b className="text-read red">30d 10:28 <br /> 30d 10:28</b></h5>
                      </li>
                      <li>
@@ -500,14 +488,9 @@ function ListOfMigrate(props) {
                                           <div><small>5 days</small></div>
                                        </div>
                                        <div className="col-sm-12">
-                                          <div className="mt-3 mb-3">
-                                             <div className="w-100 text-center">
-                                                <h6>First time bonding MsDoge?Please approve olympus dao to use your MsDoge for bonding.</h6>
-                                             </div>
-                                          </div>
                                           <div className="p-2 stake-btn">
                                              <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim</button>
-                                             <button type="button" className="table-btn btn py-2 px-4 w-100 mb-3">Claim & Autostake</button>
+                                             <button type="button" className="table-btn btn px-4 w-100">Claim & Autostake</button>
                                           </div>
                                        </div>
                                     </div>
@@ -567,6 +550,80 @@ function ListOfMigrate(props) {
                               </div>
                            </div>
                         </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         { /* MODAL */}
+         <div className="modal fade" id="migrateTransactionPopup" tabIndex="-1" aria-labelledby="msDogeApprove" aria-hidden="true">
+            <div className="modal-dialog">
+               <div className="modal-content migrateTransactionPopupContent">
+                  <div className="modal-body popup-card-container rel">
+                     <header className="d-flex justify-content-between pt-0 pb-0 align-items-center" style={{ background: "none" }}>
+                        <div type="button" className="closebtn" data-bs-dismiss="modal" aria-label="Close">
+                           <img src={edenSwap} width="30" />
+                        </div>
+
+                        <div data-bs-toggle="modal" data-bs-target="#migrateTransactionPopup" className="cursor-pointer position-absolute migrateTransactionClose" style={{ right: "15px", top: "15px" }}>
+                           <i class="fas fa-times-circle"></i>
+                        </div>
+                     </header>
+
+                     <div className="heading-text-popupm">
+                        <div className="input-bal">
+                           <div className="row pt-5">
+
+                              <div className="col-12">
+                                 <div className="mt-3 mb-3">
+                                    <p className="w-100 text-center">
+                                       <div className="w-100 mb-2">
+                                          <span><img src={DOGE} width="48px" /></span>
+                                          <span><img src={cryptoLogo} width="48px" /></span>
+                                       </div>
+                                       <h3 className="mb-2"><b>72.4982</b></h3>
+                                       <h6 className="mb-2"><b>USDC/UNI Pool Tokens</b></h6>
+                                       <small>Learn more about Uniswap, chat with the team, <br />others in the community, Demo text. </small>
+                                    </p>
+                                 </div>
+                              </div>
+
+                              <div className="mb-3 col-sm-12 d-flex justify-content-between">
+                                 <b><small>MSDOGE Deposited:</small></b>
+                                 <b><small>0.00007645</small></b>
+                              </div>
+
+                              <div className="mb-3 col-sm-12 d-flex justify-content-between">
+                                 <b><small>CRYPTO Deposited:</small></b>
+                                 <b><small>1252526</small></b>
+                              </div>
+
+                              <div className="mb-3 col-sm-12 d-flex justify-content-between">
+                                 <b><small>Rates:</small></b>
+                                 <b><small>1 MSDOGE = 0.000088374</small></b>
+                              </div>
+
+                              <div className="mb-3 col-sm-12 d-flex justify-content-between">
+                                 <b><small></small></b>
+                                 <b><small>1 CRYPTO = 162738</small></b>
+                              </div>
+
+                              <div className="mb-3 col-sm-12 d-flex justify-content-between">
+                                 <b><small>Share of pool:</small></b>
+                                 <b><small>0.00007645%</small></b>
+                              </div>
+
+
+                              <div className="col-sm-12">
+                                 <div className="p-2 stake-btn">
+                                    <a type="button" className="table-btn btn w-100">Confirm Transaction</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+
                      </div>
                   </div>
                </div>

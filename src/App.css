@@ -994,7 +994,7 @@ header .navbar {
   font-family: var(--amitSemi);
   width: 150px;
   height: 48px;
-  padding: 15px 40px 11px 40px;
+  padding: 15px 40px;
   border-radius: 6px;
   display: flex;
     justify-content: center;
@@ -1017,7 +1017,9 @@ header .navbar {
   font-size: 14px;
   color: var(--black);
   font-family: var(--amitSemi);
-  padding: 15px 40px 11px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 6px;
 }
 
@@ -1212,12 +1214,12 @@ select::-ms-expand {
 .table-btn {
 	background: #cdcdcd;
 	border: none;
-	color: var(--white);
+	color: var(--black);
 	font-family: var(--amitSemi);
     font-size: 14px;
     width: 104px;
     height: 48px;
-    padding: 15px 40px 11px 40px;
+    padding: 15px 40px;
     border-radius: 6px;
 }
 
@@ -1328,9 +1330,12 @@ table.stake-list-sel.fliter-box td:last-child {
 
 .modal.fade div.modal-dialog {
 	max-width: 340px;
-	top: 50%;
-	transform: translateY(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    position: absolute;
 }
+
 .heading-text-popupm h5 {
 	margin-top: 9px !important;
 	font-family: var(--amitSemi);
@@ -1866,6 +1871,13 @@ div.acc-heading-text h2 > span {
   cursor: pointer;
 }
 
+.stake-list-sel select{
+  background: none !important;
+}
+
+.fa-sort-down:before{
+  content: '' !important;
+}
 
 .admin-dashboard-bg{
   padding: 100px 0;
@@ -1983,7 +1995,21 @@ div.acc-heading-text h2 > span {
   align-items: center;
 }
 
+.migrateTransactionPopupContent{
+  width: 385px;
+}
+
+.migrateTransactionClose{
+  font-size: 28px;
+  color: #F6CE0E;
+}
+
 @media only screen and (max-width: 768px){
+
+  .migrateTransactionPopupContent{
+    width: 100%;
+  }
+
   .admin-dash_container{
     padding: 50px 0 !important;
   }
@@ -2005,19 +2031,36 @@ div.acc-heading-text h2 > span {
   color: #F6CE0E;
 }
 
+#msDogeApprove b.text-gold{
+  font-size: 20px !important;
+}
+
+#msDogeApprove h6{
+  font-size: 16px !important;
+}
+
 .boundTabs_container{
-  padding: 10px;
+  padding: 8px;
   border: solid 1px #CDCDCD !important;
-  border-radius: 12px;
+  border-radius: 5px;
   width: 100%;
+  height: 53px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .boundTabs_container button{
-  width: 50%;
-  border-radius: 12px;
+  border-radius: 5px;
   background: #fff;
   padding: 10px;
   border: none;
+  width: 127px;
+  height: 36px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  box-sizing: border-box;
 }
 
 
@@ -2113,14 +2156,28 @@ div.acc-heading-text h2 > span {
 }
 
 .line-graph-gutter{
-  background-color: #fff;
   border-radius: 12px;
-  padding: 40px 30px;
-  margin-bottom: 40px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
 }
 
 @media only screen and (max-width: 768px){
+
+  .modal-dialog{
+    margin: auto !important;
+  }
+
+  .modal.fade div.modal-dialog{
+    width: 340px !important;
+  }
+
+  .stake-bonds-outline-container .btn{
+    margin: 0 !important;
+  }
+
+  .msDogeStaking-container, .stake-bonds-outline-container{
+    justify-content: space-between !important;
+  }
+
   .line-graph-a{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.03)) !important;
   margin-bottom: 20px;
@@ -2181,4 +2238,14 @@ div.acc-heading-text h2 > span {
 
 .stake-bonds-outline-container .btn{
   margin: 0 0 0 21px;
+}
+
+.modal .modal-content{
+  width: 340px;
+}
+
+@media only screen and (max-width: 768px){
+  .modal .modal-content{
+    width: 100% !important;
+  }
 }

@@ -166,7 +166,7 @@ function Coin(props) {
                                         <a className="btn" onClick={() => setStakeBalance("bonding")} >Bonds</a>
                                     </div>
 
-                                    <div className={stakeBalance === "migrate" ? "stake-btn" : stakeBalance === "bonding" ? "stake-btn-outline" : "stake-btn-outline"}>
+                                    <div data-bs-toggle="modal" data-bs-target="#migrateTransactionPopup" className={stakeBalance === "migrate" ? "stake-btn" : stakeBalance === "bonding" ? "stake-btn-outline" : "stake-btn-outline"}>
                                         <a className="btn" onClick={() => setStakeBalance("migrate")} >Migrate</a>
                                     </div>
                                 </div>
