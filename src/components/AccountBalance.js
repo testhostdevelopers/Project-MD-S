@@ -63,6 +63,10 @@ function AccountBalance(props) {
       }
    }, [account]);
 
+   useEffect(async(preprops) => {
+      if (preprops != props && account && _Staking) await getStakedList();
+   },[props])
+   
    const multipleClaim = async () => {
       setLoading(true);
       try {
@@ -216,23 +220,21 @@ function AccountBalance(props) {
                </div>
                
                <div className="row border-top">
-                  <div className="row justify-content-center border-top">
-                     <div className="col-6 py-3 text-center">
-                        <button
-                           type="button"
-                           className={`withdraw-btn mx-auto py-3 px-5 ${active && "active"}`}
-                           {
-                              ...(
-                                 active && {
-                                    "data-bs-target" : "#stakingModal",
-                                    "data-bs-toggle" : "modal"
-                                 }
-                              )
-                           }
-                        >
-                        Stake
-                        </button>
-                     </div>
+                  <div className="col-6 py-3 text-center">
+                     <button
+                        type="button"
+                        className={`withdraw-btn mx-auto py-3 px-5 ${active && "active"}`}
+                        {
+                           ...(
+                              active && {
+                                 "data-bs-target" : "#stakingModal",
+                                 "data-bs-toggle" : "modal"
+                              }
+                           )
+                        }
+                     >
+                     Stake
+                     </button>
                   </div>
                   <div className="col-6 py-3 text-center">
                      <button
@@ -540,7 +542,11 @@ function AccountBalance(props) {
    )
 }
 
+const mapStateToProps = ({ changed }) => ({
+   updated: changed.updated
+})
+
 const mapDispatchToProps = (dispatch) => ({
    updateStatus: () => dispatch(updateStatus())
 })
-export default connect(null, mapDispatchToProps)(AccountBalance);
+export default connect(mapStateToProps, mapDispatchToProps)(AccountBalance);
