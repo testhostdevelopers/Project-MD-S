@@ -220,10 +220,11 @@ function AccountBalance(props) {
                </div>
 
                <div className="row border-top">
-                  <div className="col-6 py-3 text-center">
+                  <div className="col-12 py-3 text-center">
                      <button
                         type="button"
                         className={`withdraw-btn mx-auto py-3 px-5 ${active && "active"}`}
+                        data-bs-toggle="modal" data-bs-target="#stakeCryptoModal"
                         {
                            ...(
                               active && {
@@ -234,23 +235,6 @@ function AccountBalance(props) {
                         }
                      >
                      Stake
-                     </button>
-                  </div>
-                  <div className="col-6 py-3 text-center">
-                     <button
-                        type="button"
-                        className="withdraw-btn mx-auto py-3 px-5"
-                        data-bs-toggle="modal" data-bs-target="#stakeCryptoModal"
-                        {
-                           ...(
-                              active && {
-                                 "data-bs-target": "#multiClaimCoinPopup",
-                                 "data-bs-toggle": "modal"
-                              }
-                           )
-                        }
-                     >
-                        Claim
                      </button>
                   </div>
                </div>

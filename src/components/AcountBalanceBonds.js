@@ -253,16 +253,16 @@ return (
             </div>
          </div>
          <div className="row border-top">
-            <div className="col-6 py-3 text-center">
+            <div className="col-12 py-3 text-center">
                <button data-bs-toggle="modal" data-bs-target="#msDogeApprove" onClick={() => setBoundTabs(false)} type="button" className="withdraw-btn mx-auto py-3 px-5">
                Stake
                </button>
             </div>
-            <div className="col-6 py-3 text-center">
+            {/* <div className="col-6 py-3 text-center">
                <button data-bs-toggle="modal" data-bs-target="#msDogeApprove" onClick={() => setBoundTabs(true)} type="button" className="withdraw-btn mx-auto py-3 px-5">
                Claim
                </button>
-            </div>
+            </div> */}
          </div>
       </div>
    </div>
