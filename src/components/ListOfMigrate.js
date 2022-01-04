@@ -567,7 +567,7 @@ function ListOfMigrate(props) {
                         </div>
 
                         <div data-bs-toggle="modal" data-bs-target="#migrateTransactionPopup" className="cursor-pointer position-absolute migrateTransactionClose" style={{ right: "15px", top: "15px" }}>
-                           <i class="fas fa-times-circle"></i>
+                           <i className="fas fa-times-circle"></i>
                         </div>
                      </header>
 

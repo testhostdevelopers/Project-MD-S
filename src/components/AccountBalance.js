@@ -18,7 +18,7 @@ const locations = [
       value: 0,
    },
    {
-      label: <span><img src={slogo} width="20px" height="20px" />CRYPTO</span>,
+      label: <span><img src={cryptoLogo} width="20px" height="20px" />CRYPTO</span>,
       value: 1,
    }
 ];
@@ -431,38 +431,6 @@ function AccountBalance(props) {
                                     </div>
 
                                     <div className="col-sm-12 d-flex justify-content-center flex-column align-items-center">
-                                       <div className="crypto-select-icon">
-                                          <Dropdown
-                                             name="location"
-                                             title="Select location"
-                                             list={optionData}
-                                             onChange={(res) => setCoin(res.value)}
-                                             select={{ value: activeCoin }}
-                                             styles={{
-                                                wrapper: {
-                                                   width: '130px'
-                                                },
-                                                header: {
-                                                   border: 'none',
-                                                   backgroundColor: 'transparent'
-                                                },
-                                                headerTitle: {
-                                                   fontSize: '15px',
-                                                   fontWeight: 'bold',
-                                                   alignItems: 'center'
-                                                },
-                                                scrollList: {
-                                                   padding: '10px',
-                                                },
-                                                listItem: {
-                                                   fontSize: '15px',
-                                                   fontWeight: 'initial',
-                                                   padding: '0',
-                                                   overflow: 'initial',
-                                                }
-                                             }}
-                                          />
-                                       </div>
                                        <div className="small-logo-photo">
                                           <Dropdown
                                              name="location"

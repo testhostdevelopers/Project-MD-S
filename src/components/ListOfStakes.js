@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useWeb3React } from "@web3-react/core"
 import { NotificationManager } from "react-notifications";
 import HumanizeDuration from "humanize-duration";
+import { updateStatus } from "../store/actions/change.action";
 import { injected } from "../components/wallet/connectors"
 import Loading from '../components/Loading';
 import metamask from "../assets/images/icons/metamask-icon.svg";
@@ -80,6 +81,7 @@ function ListOfStakes(props) {
          else await dogeReward.methods.approve(StakingAddress, _initBalance).send({ from: account });
          await _Staking.methods.withdraw(activeIdx).send({ from: account });
          NotificationManager.success("Withdraw Success", ":)");
+         await props.updateStatus();
       } catch(err) {
          NotificationManager.error("Withdraw Failed",":S");
       }
@@ -601,9 +603,12 @@ function ListOfStakes(props) {
       </React.Fragment>
    )
 }
-
 const mapStateToProps = ({ changed }) => ({
    updated: changed.updated
 })
 
-export default connect(mapStateToProps, null)(ListOfStakes);
+const mapDispatchToProps = (dispatch) => ({
+   updateStatus: () => dispatch(updateStatus())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListOfStakes);

@@ -206,7 +206,7 @@ function Coin(props) {
                         </div>
 
                         <div data-bs-toggle="modal" data-bs-target="#migrateTransactionPopup" className="cursor-pointer position-absolute migrateTransactionClose" style={{ right: "15px", top: "15px" }}>
-                           <i class="fas fa-times-circle"></i>
+                           <i className="fas fa-times-circle"></i>
                         </div>
                      </header>
 
@@ -216,7 +216,7 @@ function Coin(props) {
 
                               <div className="col-12">
                                  <div className="mt-3 mb-3">
-                                    <p className="w-100 text-center">
+                                    <div className="w-100 text-center">
                                        <div className="w-100 mb-2">
                                           <span><img src={DOGE} width="48px" /></span>
                                           <span><img src={cryptoLogo} width="48px" /></span>
@@ -224,7 +224,7 @@ function Coin(props) {
                                        <h3 className="mb-2"><b>72.4982</b></h3>
                                        <h6 className="mb-2"><b>USDC/UNI Pool Tokens</b></h6>
                                        <small>Learn more about Uniswap, chat with the team, <br />others in the community, Demo text. </small>
-                                    </p>
+                                    </div>
                                  </div>
                               </div>
 
