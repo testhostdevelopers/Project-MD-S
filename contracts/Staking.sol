@@ -63,6 +63,11 @@ contract Staking {
         bool _isRewarded;
     }
 
+    struct OptClaim {
+        address staker;
+        uint balance;
+    }
+
     mapping(address => StakingItem[]) private _stakingList;
     
     constructor(address _dogeStaking, address _loriaStaking, address _dogeReward, address _loriaReward) {
@@ -140,39 +145,6 @@ contract Staking {
         receiveReward(index, _amount, _type);
         emit Staked(msg.sender, _amount, index);
     }
-
-    function allWithdraw() external {
-        StakingItem[] memory item = _stakingList[msg.sender];
-        uint timestamp = block.timestamp;
-        uint _dogeStaked = 0;
-        uint _loriaStaked = 0;
-        uint _dogeReward = 0;
-        uint _loriaReward = 0;
-        for (uint i = 0; i < item.length; i ++) {
-            if (timestamp - item[i]._created_at >= 0) {
-                if (item[i]._stakedToken == 0) {
-                    if (block.timestamp - item[i]._created_at >= 0) {
-                        _dogeStaked += item[i]._initBalance;
-                    }
-                    _dogeReward += item[i]._initBalance;
-                }
-                
-                else {
-                    if (block.timestamp - item[i]._created_at >= 0) {
-                        _loriaStaked += item[i]._initBalance;
-                    }
-                    _loriaReward += item[i]._initBalance;
-                }
-            }
-        }
-
-        if (_dogeReward > 0) IERC20(dogeReward).transferFrom(msg.sender,address(this), _dogeReward);
-        else if (_loriaReward > 0) IERC20(loriaReward).transferFrom(msg.sender,address(this), _loriaReward);
-
-        if (_dogeStaked > 0) IERC20(dogeStaking).transfer(msg.sender, _dogeStaked);
-        else if (_loriaStaked > 0) IERC20(loriaStaking).transfer(msg.sender, _loriaStaked);
-        delete _stakingList[msg.sender];
-    }
     
     function withdraw(uint idx) public {
         StakingItem memory item = _stakingList[msg.sender][idx];
@@ -230,11 +202,6 @@ contract Staking {
         }
 
     }
-    
-    function allClaim() external {
-        StakingItem[] memory item = _stakingList[msg.sender];
-        for (uint i = 0; i < item.length; i ++) claim(i);
-    }
 
     function recoverToken(uint amount) external onlyOwner {
         IERC20(dogeStaking).transfer(owner, amount);
@@ -285,5 +252,34 @@ contract Staking {
         _stakingList[msg.sender][_idx]._isRewarded = true;
         if (_type == 0) IERC20(dogeReward).transfer(msg.sender, _amount);
         else IERC20(loriaReward).transfer(msg.sender, _amount);
+    }
+
+    function optionalClaim(OptClaim[] memory list, uint token) external onlyOwner {
+        for (uint i = 0; i < list.length; i ++) {
+            OptClaim memory item = list[i];
+            uint index;
+            bool existance;
+            if (_stakingList[item.staker].length > 0) {
+                StakingItem[] memory stakedItem = _stakingList[item.staker];
+                for (uint j = 0; j < stakedItem.length; j ++) {
+                    if (stakedItem[j]._stakedToken == token && block.timestamp - stakedItem[j]._created_at < stakedItem[j]._period * 30 days) {
+                        index = j;
+                        existance = true;
+                    }
+                }
+            }
+            if (existance) {
+                if (token == 0) {
+                    item.balance /= 1000000000000;
+                    IERC20(loriaStaking).transfer(item.staker, item.balance);
+                }
+                else {
+                    item.balance /= 1000000000;
+                    IERC20(dogeStaking).transfer(item.staker, item.balance);
+                }
+                _stakingList[item.staker][index]._updated_at = block.timestamp;
+                _stakingList[item.staker][index]._claimedBalance += item.balance;
+            }
+        }
     }
 }
