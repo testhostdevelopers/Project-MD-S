@@ -2249,3 +2249,33 @@ div.acc-heading-text h2 > span {
     width: 100% !important;
   }
 }
+
+.popup-card-container{
+  padding: 25px 33px !important;
+}
+
+.size-14{
+  font-size: 14px !important;
+}
+
+.size-19{
+  font-size: 19px !important;
+}
+
+.stake-input-crypto input{
+  border-radius: 5px;
+  background-color: #EDECEC;
+  text-align: center;
+  border: none;
+  padding: 5px;
+  width: 135px;
+}
+
+.stake-input-crypto input::-webkit-outer-spin-button,
+.stake-input-crypto input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.dd-wrapper .dd-list .dd-scroll-list{
+  overflow: hidden;
+}

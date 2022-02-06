@@ -61,7 +61,7 @@ body, .coin-main, .line-graph-gutter{
     color: ${props => props.theme.text};
     fill: ${props => props.theme.text};
   }
-header,.form-field .dropdown-body, .line-graph,.popup-card-container, .navbar-expand-lg .navbar-nav .nav-item .sub-menu, .text-person, .icon-text-block-cri, .step-tabs-box nav .nav-tabs .nav-link.active, .aud-white-box, .review-box, .s-inline-box, .s-icon-box, .moon-icon, .accordion-button.collapsed{
+header,.form-field .dropdown-body, .dd-wrapper .dd-list, .line-graph,.popup-card-container, .navbar-expand-lg .navbar-nav .nav-item .sub-menu, .text-person, .icon-text-block-cri, .step-tabs-box nav .nav-tabs .nav-link.active, .aud-white-box, .review-box, .s-inline-box, .s-icon-box, .moon-icon, .accordion-button.collapsed{
     background-color: ${props => props.theme.backgroundColor};
     border-color: ${props => props.theme.backgroundColor};
   }
@@ -71,7 +71,7 @@ header,.form-field .dropdown-body, .line-graph,.popup-card-container, .navbar-ex
     background-position: center;
   }
   .s-box h3, .s-box h5, .s-box i, .approve-btn{
-    color: ${props => props.theme.fontColor} !important;
+    color: ${props => props.theme.text} !important;
   }
   .navbar-expand-lg .navbar-nav .nav-item .sub-menu li a {
     border-color: ${props => props.theme.borderColor};
