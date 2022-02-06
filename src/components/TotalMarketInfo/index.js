@@ -86,21 +86,6 @@ const index = () => {
                             </div>
                         </div>
 
-                        <div>
-                            <div className="mb-3">
-                                <p>MsDoge Index</p>
-                                <div className="d-flex">
-                                    <h5><b>25.5<sub style={{ bottom: "0" }}>M</sub></b> </h5>
-                                </div>
-                            </div>
-
-                            <div>
-                                <p>Crypto Index</p>
-                                <div className="d-flex">
-                                    <h5><b>36.84 sOHM</b></h5>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
