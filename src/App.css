@@ -1158,6 +1158,7 @@ select::-ms-expand {
 	font-size: 14px;
 	font-family: var(--amitSemi);
 	border-radius: 6px;
+  color: #000 !important;
 	border: none;
 	padding: 17px 0 13px 0 !important;
 }

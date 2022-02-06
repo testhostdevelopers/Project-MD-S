@@ -70,7 +70,7 @@ header,.form-field .dropdown-body, .dd-wrapper .dd-list, .line-graph,.popup-card
     background-repeat: no-repeat;
     background-position: center;
   }
-  .s-box h3, .s-box h5, .s-box i, .approve-btn{
+  .s-box h3, .s-box h5, .s-box i{
     color: ${props => props.theme.text} !important;
   }
   .navbar-expand-lg .navbar-nav .nav-item .sub-menu li a {
