@@ -426,7 +426,7 @@ header .navbar {
 }
 
 .popup-card-container svg{
-  width: 22px;
+  width: 24px;
 }
 
 .modal-content{
@@ -2279,4 +2279,32 @@ div.acc-heading-text h2 > span {
 
 .dd-wrapper .dd-list .dd-scroll-list{
   overflow: hidden;
+  padding: 0;
+  text-align: center;
+}
+
+.dd-scroll-list svg{
+  display: none !important;
+}
+
+.dd-scroll-list {
+  padding: 0 !important;
+}
+
+.dd-wrapper .dd-list .dd-scroll-list{
+  overflow-y: hidden !important;
+}
+
+.dd-list-item {
+  border: none !important;
+  padding: 10px !important;
+  border-radius: 15px !important;
+}
+
+.dd-wrapper .dd-list{
+  border: none !important;
+}
+
+.dd-wrapper .dd-list{
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d !important;
 }

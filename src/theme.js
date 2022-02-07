@@ -15,7 +15,8 @@ export const lightTheme = {
     black: '#000',
     gray: "#F7F7F7",
     blackGold: "#000",
-    grayBg: "none"
+    grayBg: "none",
+    hoverSelect: "#434343"
 
 }
 export const darkTheme = {
@@ -30,7 +31,8 @@ export const darkTheme = {
     black: '#fff',
     gray: "#454343",
     blackGold: "#f6ce0e",
-    grayBg: "#cdcdcd"
+    grayBg: "#cdcdcd",
+    hoverSelect: "#fff"
 }
 export const GlobalStyles = createGlobalStyle`
 body, .coin-main, .line-graph-gutter{
@@ -48,6 +50,11 @@ body, .coin-main, .line-graph-gutter{
 
 .list-stake table tr td small b, .list-stake table tr td i{
   color: ${props => props.theme.black};
+}
+
+.dd-wrapper .dd-list .dd-scroll-list .dd-list-item:hover{
+  background: ${props => props.theme.hoverSelect};
+  color: ${props => props.theme.fontColor} !important;
 }
 
 .connect-wallet-login-border{

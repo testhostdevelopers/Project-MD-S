@@ -178,7 +178,7 @@ export default function ListOfBounds() {
                         <h5 className="mt-3"><b className="text-read">$3,462,530</b></h5>
                      </li>
                      <li>
-                        <button type="button" className="table-btn py-2 px-4">Bond</button>
+                        <button data-bs-toggle="modal" data-bs-target="#stakeCryptoModal" onClick={() => setBoundTabs(false)} type="button" className="table-btn py-2 px-4">Bond</button>
                      </li>
                   </ul>
 
@@ -248,7 +248,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#stakeMsDogeModal" type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                            </td>
                         </tr>
@@ -278,7 +278,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#stakeMsDogeModal"  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                            </td>
                         </tr>
@@ -308,7 +308,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#stakeMsDogeModal"  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                            </td>
                         </tr>
@@ -368,7 +368,7 @@ export default function ListOfBounds() {
                            <td className="p-2">
                               <h5><b className="text-read">$3,462,530</b></h5>
                            </td>
-                           <td className="p-2 stake-btn"> <button  type="button" className="table-btn btn py-2 px-4">Bond</button></td>
+                           <td className="p-2 stake-btn"> <button data-bs-toggle="modal" data-bs-target="#stakeMsDogeModal" type="button" className="table-btn btn py-2 px-4">Bond</button></td>
                            <td className="p-2">
                            </td>
                         </tr>
@@ -808,6 +808,7 @@ export default function ListOfBounds() {
                </div>
             </div>
          </div>
+         
 
 
       </React.Fragment>
