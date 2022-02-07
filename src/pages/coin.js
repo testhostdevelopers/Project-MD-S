@@ -196,7 +196,7 @@ function Coin(props) {
             </div>
             <Footer />
             { /* MODAL */}
-         <div className="modal fade" id="migrateTransactionPopup" tabIndex="-1" aria-labelledby="msDogeApprove" aria-hidden="true">
+         <div className="modal fade migrate-modal-body" id="migrateTransactionPopup" tabIndex="-1" aria-labelledby="msDogeApprove" aria-hidden="true">
             <div className="modal-dialog">
                <div className="modal-content migrateTransactionPopupContent">
                   <div className="modal-body popup-card-container rel">
@@ -218,11 +218,11 @@ function Coin(props) {
                                  <div className="mt-3 mb-3">
                                     <div className="w-100 text-center">
                                        <div className="w-100 mb-2">
-                                          <span><img src={DOGE} width="48px" /></span>
-                                          <span><img src={cryptoLogo} width="48px" /></span>
+                                          <span><img src={DOGE} width="48px"  className="header-doge-logo" /></span>
+                                          <span><img src={cryptoLogo} width="48px" className="header-crypto-logo" /></span>
                                        </div>
                                        <h3 className="mb-2"><b>72.4982</b></h3>
-                                       <h6 className="mb-2"><b>USDC/UNI Pool Tokens</b></h6>
+                                       <h6 className="mb-2"><b>MSDOGE/CRYPTO Pool Tokens</b></h6>
                                        <small>Learn more about Uniswap, chat with the team, <br />others in the community, Demo text. </small>
                                     </div>
                                  </div>
@@ -230,12 +230,12 @@ function Coin(props) {
 
                               <div className="mb-3 col-sm-12 d-flex justify-content-between">
                                  <b><small>MSDOGE Deposited:</small></b>
-                                 <b><small>0.00007645</small></b>
+                                 <b><small><img src={DOGE} width="18px" /> 0.00007645</small></b>
                               </div>
 
                               <div className="mb-3 col-sm-12 d-flex justify-content-between">
                                  <b><small>CRYPTO Deposited:</small></b>
-                                 <b><small>1252526</small></b>
+                                 <b><small><img src={cryptoLogo} width="18px" /> 1252526</small></b>
                               </div>
 
                               <div className="mb-3 col-sm-12 d-flex justify-content-between">

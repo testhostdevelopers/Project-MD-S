@@ -2320,13 +2320,25 @@ div.acc-heading-text h2 > span {
   top: 17px !important;
   width: 0;
     height: 0;
-    border-top: solid 8px;
-    border-left: solid 8px transparent;
-    border-right: solid 8px transparent;
+    border-top: solid 6px;
+    border-left: solid 6px transparent;
+    border-right: solid 6px transparent;
 }
 
-/* .dd-wrapper .dd-list > .dd-header::before{
-    border-bottom: solid 8px #222 !important;
-    border-left: solid 8px transparent !important;
-    border-right: solid 8px transparent !important;
-} */
+.migrate-modal-body .modal-content, .migrate-modal-body .modal-dialog{
+  min-width: 485px;
+}
+
+.migrate-modal-body .header-doge-logo{
+  margin-right: -10px;
+  z-index: 10;
+}
+
+.migrate-modal-body .header-crypto-logo{
+  width: 46px;
+  height: 46px;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+  border: 0.5px solid #000000;
+  z-index: -1 !important;
+}

@@ -16,7 +16,8 @@ export const lightTheme = {
     gray: "#F7F7F7",
     blackGold: "#000",
     grayBg: "none",
-    hoverSelect: "#434343"
+    hoverSelect: "#434343",
+    buttonCrossBlackTextColor: "#111"
 
 }
 export const darkTheme = {
@@ -32,7 +33,8 @@ export const darkTheme = {
     gray: "#454343",
     blackGold: "#f6ce0e",
     grayBg: "#cdcdcd",
-    hoverSelect: "#fff"
+    hoverSelect: "#fff",
+    buttonCrossBlackTextColor: "#111"
 }
 export const GlobalStyles = createGlobalStyle`
 body, .coin-main, .line-graph-gutter{
@@ -57,6 +59,9 @@ body, .coin-main, .line-graph-gutter{
   color: ${props => props.theme.fontColor} !important;
 }
 
+.stake-btn .btn{
+  color: ${props => props.theme.buttonCrossBlackTextColor};
+}
 
 .connect-wallet-login-border{
   background: ${props => props.theme.grayBg};

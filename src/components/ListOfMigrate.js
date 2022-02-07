@@ -263,7 +263,7 @@ function ListOfMigrate(props) {
          <div className="modal fade" id="connectWallet" tabIndex="-1" aria-labelledby="connectWallet" aria-hidden="true">
             <div className="modal-dialog">
                <div className="modal-content gray-bg">
-                  <div className="modal-body popup-card-container rel">
+                  <div className="modal-body popup-card-container rel ">
                      <button type="button" className="closebtn" data-bs-dismiss="modal" aria-label="Close" style={{ right: "15px", position: "absolute" }}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M10.0001 8.82227L14.1251 4.69727L15.3034 5.8756L11.1784 10.0006L15.3034 14.1256L14.1251 15.3039L10.0001 11.1789L5.87511 15.3039L4.69678 14.1256L8.82178 10.0006L4.69678 5.8756L5.87511 4.69727L10.0001 8.82227Z" fill="black" />
@@ -557,7 +557,7 @@ function ListOfMigrate(props) {
          </div>
 
          { /* MODAL */}
-         <div className="modal fade" id="migrateTransactionPopup" tabIndex="-1" aria-labelledby="msDogeApprove" aria-hidden="true">
+         <div className="modal fade migrate-modal-body" id="migrateTransactionPopup" tabIndex="-1" aria-labelledby="msDogeApprove" aria-hidden="true">
             <div className="modal-dialog">
                <div className="modal-content migrateTransactionPopupContent">
                   <div className="modal-body popup-card-container rel">
