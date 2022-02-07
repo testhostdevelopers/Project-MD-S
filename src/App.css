@@ -2308,3 +2308,25 @@ div.acc-heading-text h2 > span {
 .dd-wrapper .dd-list{
   box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d !important;
 }
+
+.dd-wrapper .dd-header-title{
+  margin: 2px 15px !important;
+}
+
+.small-logo-photo .dd-wrapper .dd-header::before{
+  content: '' !important;
+  position: absolute !important;
+  right: 10px !important;
+  top: 17px !important;
+  width: 0;
+    height: 0;
+    border-top: solid 8px;
+    border-left: solid 8px transparent;
+    border-right: solid 8px transparent;
+}
+
+/* .dd-wrapper .dd-list > .dd-header::before{
+    border-bottom: solid 8px #222 !important;
+    border-left: solid 8px transparent !important;
+    border-right: solid 8px transparent !important;
+} */

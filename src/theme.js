@@ -57,6 +57,7 @@ body, .coin-main, .line-graph-gutter{
   color: ${props => props.theme.fontColor} !important;
 }
 
+
 .connect-wallet-login-border{
   background: ${props => props.theme.grayBg};
 }
